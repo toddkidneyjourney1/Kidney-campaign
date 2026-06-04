@@ -131,28 +131,6 @@ header {
     align-items: center;
 }
 
-.<section class="card">
-  <h2>1. Consider Living Donation</h2>
-  <p>Finding a living donor matching my profile is my highest priority. Reach out directly to learn more about the initial screening process. Living donors have excellent outcomes and can transform my future.</p>
-  
-  <a href="#hca-screening-portal" class="btn btn-blue">How to Test if You're a Match</a>
-</section>
-}
-
-.tagline {
-    max-width: 650px;
-    margin: var(--spacing-md) auto 0;
-}
-
-/* Banner Image */
-.banner {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-    margin-bottom: var(--spacing-lg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: block;
-}
 
 /* Grid Layout */
 .grid {
