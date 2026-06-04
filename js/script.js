@@ -16,7 +16,7 @@ function showToast(message, duration = 3000) {
 }
 
 // Update progress bar with real data
-function updateProgress(raised, goal = 50000) {
+function updateProgress(raised, goal = 5000) {
     const percentage = Math.min((raised / goal) * 100, 100);
     const progressFill = document.getElementById('progress-fill');
     const raisedAmount = document.getElementById('raised-amount');
@@ -24,11 +24,11 @@ function updateProgress(raised, goal = 50000) {
     if (progressFill) {
         progressFill.style.width = percentage + '%';
     }
-    
     if (raisedAmount) {
         raisedAmount.textContent = '$' + Math.round(raised).toLocaleString();
     }
     
+   
     // Update progress bar aria attributes
     const progressBar = document.querySelector('[role="progressbar"]');
     if (progressBar) {
