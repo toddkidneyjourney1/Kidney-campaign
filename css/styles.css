@@ -25,6 +25,93 @@
     --spacing-xl: 40px;
     --border-radius: 12px;
     --transition: all 0.2s ease;
+   /* ========================================
+   EKG Horizontal Timeline Flexbox Styles
+   ======================================== */
+.timeline-section {
+    padding: 3rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column; /* Default stack for mobile devices */
+    gap: 2.5rem;
+    position: relative;
+    margin-top: 3rem;
+}
+
+/* Base Timeline Item Settings */
+.timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: rgba(30, 41, 59, 0.7); /* Translucent dark slate background */
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Highlight the Current Active Stage */
+.timeline-item.current {
+    border-color: #3b82f6; /* Bright theme blue */
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    transform: translateY(-5px);
+}
+
+.timeline-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Desktop Styles: Turn it into a horizontal EKG flow */
+@media (min-width: 768px) {
+    .timeline-container {
+        flex-direction: row; /* Horizontal row alignment */
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    /* The EKG Line Grid Path */
+    .ekg-line {
+        position: absolute;
+        top: 2.5rem; /* Aligns line perfectly through your icons */
+        left: 5%;
+        width: 90%;
+        height: 20px;
+        z-index: 1;
+        background-image: linear-gradient(90deg, transparent 0%, #3b82f6 45%, transparent 55%);
+        background-size: 200% 100%;
+        animation: ekg-pulse 4s linear infinite;
+        opacity: 0.4;
+        
+        /* Mask to mimic an EKG spike overlay pattern */
+        clip-path: polygon(
+            0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%
+        );
+        border-bottom: 2px solid rgba(59, 130, 246, 0.5);
+    }
+    
+    .timeline-item {
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1rem;
+    }
+    
+    .timeline-item.current {
+        background: rgba(30, 41, 59, 0.5);
+        border: 1px solid rgba(59, 130, 246, 0.4);
+    }
+}
+
+/* Smooth Heartbeat Lighting Effect Animation */
+@keyframes ekg-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
 }
 
 /* Reset & Base Styles */
