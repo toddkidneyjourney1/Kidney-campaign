@@ -17,15 +17,7 @@
     --color-accent-green-hover: #059669;
     --color-accent-blue-hover: #0284c7;
     --color-success: #10b981;
-    --color-error: #ef4444;
-    --spacing-xs: 8px;
-    --spacing-sm: 12px;
-    --spacing-md: 20px;
-    --spacing-lg: 30px;
-    --spacing-xl: 40px;
-    --border-radius: 12px;
-    --transition: all 0.2s ease;
-   /* ========================================
+  /* ========================================
    EKG Horizontal Timeline Flexbox Styles
    ======================================== */
 .timeline-section {
@@ -57,7 +49,7 @@
 
 /* Highlight the Current Active Stage */
 .timeline-item.current {
-    border-color: #3b82f6; /* Bright theme blue */
+    border-color: #3b82f6 !important; /* Bright theme blue */
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
     transform: translateY(-5px);
 }
@@ -70,7 +62,7 @@
 /* Desktop Styles: Turn it into a horizontal EKG flow */
 @media (min-width: 768px) {
     .timeline-container {
-        flex-direction: row; /* Horizontal row alignment */
+        flex-direction: row !important; /* Forces horizontal row alignment */
         align-items: flex-start;
         justify-content: space-between;
     }
@@ -86,15 +78,32 @@
         background-image: linear-gradient(90deg, transparent 0%, #3b82f6 45%, transparent 55%);
         background-size: 200% 100%;
         animation: ekg-pulse 4s linear infinite;
-        opacity: 0.4;
+        opacity: 0.6;
+        display: block !important;
         
         /* Mask to mimic an EKG spike overlay pattern */
-        clip-path: polygon(
-            0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%
-        );
+        -webkit-clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
+        clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
         border-bottom: 2px solid rgba(59, 130, 246, 0.5);
     }
     
+    .timeline-item {
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1rem;
+    }
+    
+    .timeline-item.current {
+        background: rgba(30, 41, 59, 0.5);
+        border: 1px solid rgba(59, 130, 246, 0.4);
+    }
+}
+
+/* Smooth Heartbeat Lighting Effect Animation */
+@keyframes ekg-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
     .timeline-item {
         background: transparent;
         border: 1px solid transparent;
@@ -303,39 +312,7 @@ header {
     word-wrap: break-word;
 }
 
-.btn-green {
-    background-color: var(--color-accent-green);
-}
 
-.btn-green:hover {
-    background-color: var(--color-accent-green-hover);
-}
-
-.btn-blue {
-    background-color: var(--color-accent-blue);
-}
-
-.btn-blue:hover {
-    background-color: var(--color-accent-blue-hover);
-}
-
-.btn:focus {
-    outline: 2px solid var(--color-accent-blue);
-}
-
-.btn:active {
-    transform: scale(0.98);
-}
-
-/* Progress Container */
-.progress-container {
-    margin-top: var(--spacing-lg);
-}
-
-.progress-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
     color: var(--color-text-secondary);
     font-weight: bold;
     margin-bottom: var(--spacing-xs);
