@@ -290,6 +290,6 @@ if (factBtn) {
         const randomFact = kidneyFacts[randomIndex];
         
         // Use your site's native toast system (displays for 7 seconds)
-        showToast(randomFact, 7000);
+        showToast(randomFact, 15000);
     });
 }
