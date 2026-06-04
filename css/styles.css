@@ -404,7 +404,10 @@ details p {
     position: relative;
     margin-top: 2rem;
 }
-
+/* Add this to css/styles.css */
+.timeline-section {
+    margin-bottom: 2rem;
+}
 /* Base Timeline Item Settings */
 .timeline-item {
     flex: 1;
