@@ -586,3 +586,12 @@ footer p {
         color: #0066cc;
     }
 }
+/* Custom Kidney Cursor */
+body {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🫀</text></svg>") 16 16, auto;
+}
+
+/* Optional: Keep standard pointer for buttons/links so they are still clickable */
+a, button, details summary {
+    cursor: pointer;
+}
