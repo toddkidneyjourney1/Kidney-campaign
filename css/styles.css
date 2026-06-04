@@ -586,12 +586,3 @@ footer p {
         color: #0066cc;
     }
 }
-/* Custom Kidney Cursor */
-body {
-    cursor: url("https://cdn-icons-png.flaticon.com/32/32/32338.png"), auto;
-}
-
-/* Ensure buttons and links remain clickable */
-a, button, details summary {
-    cursor: pointer;
-}
