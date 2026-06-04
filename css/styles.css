@@ -17,110 +17,15 @@
     --color-accent-green-hover: #059669;
     --color-accent-blue-hover: #0284c7;
     --color-success: #10b981;
-  /* ========================================
-   EKG Horizontal Timeline Flexbox Styles
-   ======================================== */
-.timeline-section {
-    padding: 3rem 1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.timeline-container {
-    display: flex;
-    flex-direction: column; /* Default stack for mobile devices */
-    gap: 2.5rem;
-    position: relative;
-    margin-top: 3rem;
-}
-
-/* Base Timeline Item Settings */
-.timeline-item {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    background: rgba(30, 41, 59, 0.7); /* Translucent dark slate background */
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-/* Highlight the Current Active Stage */
-.timeline-item.current {
-    border-color: #3b82f6 !important; /* Bright theme blue */
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-    transform: translateY(-5px);
-}
-
-.timeline-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Desktop Styles: Turn it into a horizontal EKG flow */
-@media (min-width: 768px) {
-    .timeline-container {
-        flex-direction: row !important; /* Forces horizontal row alignment */
-        align-items: flex-start;
-        justify-content: space-between;
-    }
-
-    /* The EKG Line Grid Path */
-    .ekg-line {
-        position: absolute;
-        top: 2.5rem; /* Aligns line perfectly through your icons */
-        left: 5%;
-        width: 90%;
-        height: 20px;
-        z-index: 1;
-        background-image: linear-gradient(90deg, transparent 0%, #3b82f6 45%, transparent 55%);
-        background-size: 200% 100%;
-        animation: ekg-pulse 4s linear infinite;
-        opacity: 0.6;
-        display: block !important;
-        
-        /* Mask to mimic an EKG spike overlay pattern */
-        -webkit-clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
-        clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
-        border-bottom: 2px solid rgba(59, 130, 246, 0.5);
-    }
     
-    .timeline-item {
-        background: transparent;
-        border: 1px solid transparent;
-        padding: 1rem;
-    }
-    
-    .timeline-item.current {
-        background: rgba(30, 41, 59, 0.5);
-        border: 1px solid rgba(59, 130, 246, 0.4);
-    }
-}
-
-/* Smooth Heartbeat Lighting Effect Animation */
-@keyframes ekg-pulse {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-    .timeline-item {
-        background: transparent;
-        border: 1px solid transparent;
-        padding: 1rem;
-    }
-    
-    .timeline-item.current {
-        background: rgba(30, 41, 59, 0.5);
-        border: 1px solid rgba(59, 130, 246, 0.4);
-    }
-}
-
-/* Smooth Heartbeat Lighting Effect Animation */
-@keyframes ekg-pulse {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
+    /* Spacing & Utilities */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
 /* Reset & Base Styles */
@@ -261,7 +166,6 @@ header {
     .grid {
         grid-template-columns: 1fr;
     }
-
     h1 {
         font-size: 2rem;
     }
@@ -312,7 +216,32 @@ header {
     word-wrap: break-word;
 }
 
+.btn-blue {
+    background-color: var(--color-accent-blue);
+}
 
+.btn-blue:hover {
+    background-color: var(--color-accent-blue-hover);
+    transform: translateY(-2px);
+}
+
+.btn-green {
+    background-color: var(--color-accent-green);
+}
+
+.btn-green:hover {
+    background-color: var(--color-accent-green-hover);
+    transform: translateY(-2px);
+}
+
+/* Progress Bar Component */
+.progress-container {
+    margin-top: var(--spacing-md);
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
     color: var(--color-text-secondary);
     font-weight: bold;
     margin-bottom: var(--spacing-xs);
@@ -350,10 +279,6 @@ header {
 .story-section h2 {
     border-bottom: 1px solid var(--color-border);
     padding-bottom: var(--spacing-md);
-}
-
-.story-section h2:first-child {
-    margin-top: 0;
 }
 
 /* Lists */
@@ -476,7 +401,9 @@ details p {
     border-bottom: none;
 }
 
-/* Timeline Section */
+/* ========================================
+   EKG Horizontal Timeline Flexbox Styles
+   ======================================== */
 .timeline-section {
     background: var(--color-bg-secondary);
     padding: var(--spacing-xl);
@@ -484,59 +411,92 @@ details p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     margin-bottom: var(--spacing-lg);
     border: 1px solid var(--color-border);
-}
-
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-}
-
-.timeline-item {
-    display: flex;
-    gap: var(--spacing-lg);
-    padding-left: var(--spacing-lg);
     position: relative;
+    overflow: hidden;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: -var(--spacing-lg);
-    width: 2px;
-    background: linear-gradient(180deg, var(--color-accent-blue), var(--color-accent-green));
+.timeline-container {
+    display: flex;
+    flex-direction: column; /* Default stack layout for mobile devices */
+    gap: 2.5rem;
+    position: relative;
+    margin-top: 2rem;
 }
 
-.timeline-item:last-child::before {
+/* Base Timeline Item Settings */
+.timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: rgba(30, 41, 59, 0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Highlight the Current Active Stage */
+.timeline-item.current {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    transform: translateY(-5px);
+}
+
+.timeline-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Hide line element natively on mobile stacks */
+.ekg-line {
     display: none;
 }
 
-.timeline-marker {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
+/* Desktop Styles: Turn it into a horizontal EKG flow */
+@media (min-width: 768px) {
+    .timeline-container {
+        flex-direction: row !important;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
 
-.timeline-content h3 {
-    margin-top: 0;
-    color: var(--color-accent-blue);
-}
-
-.timeline-content p {
-    margin-bottom: 0;
-}
-
-@media (max-width: 680px) {
+    /* The EKG Line Grid Path */
+    .ekg-line {
+        display: block !important;
+        position: absolute;
+        top: 2.5rem;
+        left: 5%;
+        width: 90%;
+        height: 20px;
+        z-index: 1;
+        background-image: linear-gradient(90deg, transparent 0%, #3b82f6 45%, transparent 55%);
+        background-size: 200% 100%;
+        animation: ekg-pulse 4s linear infinite;
+        opacity: 0.5;
+        
+        /* Mask pattern to form the EKG visual line */
+        -webkit-clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
+        clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
+    }
+    
     .timeline-item {
-        gap: var(--spacing-md);
-        padding-left: var(--spacing-md);
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1rem 0.5rem;
     }
+    
+    .timeline-item.current {
+        background: rgba(30, 41, 59, 0.5);
+        border: 1px solid rgba(59, 130, 246, 0.4) !important;
+    }
+}
 
-    .timeline-item::before {
-        left: 12px;
-    }
+/* Smooth Heartbeat Lighting Effect Animation */
+@keyframes ekg-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 /* Testimonials/Medical Support Section */
@@ -619,37 +579,23 @@ footer p {
 
 /* Print Styles */
 @media print {
-    .btn,
-    .skip-link,
-    .toast,
-    .share-box {
+    .btn, .skip-link, .toast, .share-box {
         display: none;
     }
-
     body {
         background: white;
         color: black;
         max-width: 100%;
     }
-
-    header,
-    .card,
-    .story-section,
-    .faq-section,
-    .timeline-section,
-    .testimonials-section,
-    .contact-section {
+    header, .card, .story-section, .faq-section, .timeline-section, .testimonials-section, .contact-section {
         background: white;
         color: black;
         border: 1px solid #ccc;
         page-break-inside: avoid;
     }
-
-    .progress-fill,
-    .progress-bar {
+    .progress-fill, .progress-bar {
         background: #e0e0e0;
     }
-
     a {
         color: #0066cc;
     }
