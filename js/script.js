@@ -268,3 +268,43 @@ document.addEventListener('DOMContentLoaded', () => {
 setInterval(() => {
     fetchFundraisingData();
 }, 5 * 60 * 1000);
+// ========================================
+// Random Kidney Facts Feature
+// ========================================
+const kidneyFacts = [
+    "You keep your old kidneys: In most cases, surgeons leave your original kidneys right where they are and place the new third kidney in the lower abdomen.",
+    "The 'Paired Exchange' chain reaction: Mismatched donor and recipient pairs can join a pool to swap kidneys, creating a domino effect that can save dozens of lives across the country!",
+    "The ultimate 'upgrade': While dialysis performs about 10% to 15% of the work of a healthy kidney, a transplanted kidney restores about 50% to 85% of normal function.",
+    "The first successful human organ transplant in history was a kidney transplant, performed in Boston in 1954 between identical twins.",
+    "A Nobel Prize-winning feat: Dr. Joseph Murray won the Nobel Prize in Medicine in 1990 for his groundbreaking work leading the first successful transplant in 1954.",
+    "Living donors live just as long: Studies show that kidney donors have the same life expectancy as the general population, and the remaining kidney grows slightly to take over the work!",
+    "Cats get kidney transplants too: Specialized veterinary universities can perform them for feline renal failure, provided the owner agrees to adopt the donor cat as well.",
+    "Blood type isn't a hard barrier anymore: Modern desensitization treatments and paired-exchange programs mean a different blood type is no longer a dealbreaker.",
+    "The oldest living donor: Age is just a number! The oldest known living kidney donor was 84 years old when she successfully donated a kidney to her grandson.",
+    "An instant 'wake-up' in the OR: The exact moment new blood vessels are connected during surgery, the transplanted kidney often turns pink and begins working immediately right on the table!"
+];
+
+const factBtn = document.getElementById('fact-btn');
+
+if (factBtn) {
+    factBtn.addEventListener('click', () => {
+        // Pick a random fact from the 10 options
+        const randomIndex = Math.floor(Math.random() * kidneyFacts.length);
+        const randomFact = kidneyFacts[randomIndex];
+        
+       // Find your existing toast notification element
+        const toast = document.getElementById('toast-notification');
+        if (toast) {
+            toast.textContent = randomFact;
+            toast.classList.add('show');
+            
+            // Hide it automatically after 7 seconds so visitors have time to read it
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 7000);
+        } else {
+            // Fallback if the toast element isn't found in the HTML
+            alert(randomFact);
+        }
+    });
+}
