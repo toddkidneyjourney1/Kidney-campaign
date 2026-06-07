@@ -34,6 +34,8 @@
         </div>
     </header>
 
+    <img src="images/banner.jpg" alt="Kidney campaign banner image" class="banner" loading="lazy">
+
     <main id="main">
         <section class="grid">
             <div class="card">
@@ -61,8 +63,6 @@
                 <a href="https://gofund.me/57ee0176d" target="_blank" rel="noopener noreferrer" class="btn btn-blue" aria-label="Donate to Todd's kidney journey on GoFundMe">Donate on GoFundMe</a>
             </div>
         </section>
-
-        <img src="images/banner.jpg" alt="Kidney campaign banner image" class="banner" loading="lazy" style="margin-bottom: 40px; border-radius: 8px;">
 
         <section class="story-section">
             <h2>The Challenge</h2>
@@ -140,3 +140,124 @@
                     <summary><strong>How do I start the process if I am interested in testing?</strong></summary>
                     <p>You can contact the HCA Florida Largo transplant coordinator directly by <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer" style="color: #00adb5; text-decoration: underline;">visiting the HCA screening portal</a>. The process is confidential and you can stop at any time without any pressure or obligation.</p>
                 </details>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="card">
+                <h2>My Journey</h2>
+                <div class="timeline-container">
+                    <div class="ekg-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🩸</div>
+                        <h3>Dialysis Treatment</h3>
+                        <p>Managing kidney function through regular treatments while waiting for my match.</p>
+                    </div>
+                    <div class="timeline-item current">
+                        <div class="timeline-icon">🔍</div>
+                        <h3>Seeking Living Donor (NOW)</h3>
+                        <p>Active search phase. If you or someone you know might be a match, please reach out.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">⚕️</div>
+                        <h3>Pre-Transplant Prep</h3>
+                        <p>Final clearances and coordination with HCA Florida Largo.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">✨</div>
+                        <h3>Transplant & Recovery</h3>
+                        <p>The beginning of my new chapter with restored health.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="#top" class="btn btn-blue" style="text-decoration: none; padding: 10px 20px;">🏠 Go Back to Top</a>
+        </div>
+
+        <footer role="contentinfo" style="margin-top: 40px; padding: 20px; text-align: center; border-top: 1px solid #ccc;">
+            <p>&copy; 2026 Todd Lyman Kidney Journey. All rights reserved.</p>
+            <p><small>Medical information provided for educational purposes. Please consult with healthcare professionals regarding kidney donation.</small></p>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // ===================================================
+            // 1. GOFUNDME COUNTER CONFIGURATION
+            // ===================================================
+            const currentRaised = 175; 
+            const fundingGoal = 5000;
+
+            const raisedAmountEl = document.getElementById('raised-amount');
+            const progressFillEl = document.getElementById('progress-fill');
+            const progressBarContainer = document.querySelector('.progress-bar');
+
+            if (raisedAmountEl && progressFillEl) {
+                raisedAmountEl.textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    maximumFractionDigits: 0
+                }).format(currentRaised);
+
+                const percentage = Math.min((currentRaised / fundingGoal) * 100, 100);
+                progressFillEl.style.width = `${percentage}%`;
+
+                if (progressBarContainer) {
+                    progressBarContainer.setAttribute('aria-valuenow', Math.round(percentage));
+                    progressBarContainer.setAttribute('aria-label', `Fundraising progress: ${currentRaised} of ${fundingGoal} dollars raised`);
+                }
+            }
+
+            // ===================================================
+            // 2. RANDOM KIDNEY FACTS CONTROLLER
+            // ===================================================
+            const kidneyFacts = [
+                "Your kidneys filter about 200 quarts of fluid every day, clearing out waste and keeping your body chemistry in balance.",
+                "Even though they make up only about 0.5% of your body weight, your kidneys receive about 20-25% of the heart's total blood output.",
+                "A single kidney is fully capable of doing the work of two! That’s why living donors can live perfectly healthy, normal lives.",
+                "Kidneys are shaped like beans, and each one is roughly the size of a large fist or a computer mouse.",
+                "Each kidney contains about 1 million tiny filtering units called nephrons. If you stretched them all out end-to-end, they would span over 40 miles!"
+            ];
+
+            const factBtn = document.getElementById('fact-btn');
+            const factDisplay = document.getElementById('fact-display');
+            
+            if (factBtn && factDisplay) {
+                factBtn.addEventListener('click', () => {
+                    const randomIndex = Math.floor(Math.random() * kidneyFacts.length);
+                    factDisplay.textContent = kidneyFacts[randomIndex];
+                });
+            }
+
+            // ===================================================
+            // 3. SHARE CAMPAIGN BUTTON CONTROLLER
+            // ===================================================
+            const shareBtn = document.getElementById('share-btn');
+            const toast = document.getElementById('toast-notification');
+
+            if (shareBtn) {
+                shareBtn.addEventListener('click', () => {
+                    const siteUrl = window.location.href;
+                    
+                    navigator.clipboard.writeText(siteUrl).then(() => {
+                        if (toast) {
+                            toast.textContent = "📋 Campaign link copied to clipboard!";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 3000);
+                        } else {
+                            alert("Link copied to clipboard!");
+                        }
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
