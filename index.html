@@ -8,23 +8,46 @@
 </head>
 <body>
 
-    <div style="text-align: center; padding: 20px;">
-        <button onclick="toggleLanguage()" style="padding: 10px 20px; cursor: pointer;">Switch to Español / Switch to English</button>
-    </div>
+    <a id="top"></a>
+    <header role="banner">
+        <div class="header-content">
+            <h1>WANTED! A KIDNEY: A New Chapter</h1>
+            <p class="tagline"><em>My journey through the arts...</em></p>
+        </div>
+    </header>
 
-    <div id="english-content">
+    <main>
+        <div class="timeline-container">
+            <div class="ekg-line"></div>
+            
+            <div class="timeline-item current">
+                <div class="timeline-icon"></div>
+                <h3>Current Status: Searching for a Living Donor</h3>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <h3>Treatment & Preparation</h3>
+            </div>
         </div>
 
-    <div id="div-spanish-content" style="display:none; padding: 20px; max-width: 1100px; margin: 0 auto;">
+        <div class="grid">
+            <div class="card">
+                <h3>Living Donor Information</h3>
+                <p>Learn about the process of becoming a living donor.</p>
+                <a href="https://www.largomedical.com/signmeup" class="btn btn-green">Register as a Donor</a>
+            </div>
+            <div class="card">
+                <h3>Financial Support</h3>
+                <p>Support the medical and recovery costs.</p>
+                <a href="#" class="btn btn-blue">Donate to GoFundMe</a>
+            </div>
         </div>
+    </main>
 
-    <script>
-        function toggleLanguage() {
-            var eng = document.getElementById("english-content");
-            var spa = document.getElementById("div-spanish-content");
-            eng.style.display = (eng.style.display === "none") ? "block" : "none";
-            spa.style.display = (spa.style.display === "none") ? "block" : "none";
-        }
-    </script>
+    <footer>
+        <p>&copy; 2026 Todd Lyman Kidney Journey.</p>
+    </footer>
+
 </body>
 </html>
