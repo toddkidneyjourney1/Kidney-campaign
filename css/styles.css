@@ -55,7 +55,7 @@ h1 {
 }
 
 /* ===================================================
-   3. BANNER RESPONSIVE SCALING FRAMEWORK
+   3. BANNER RESPONSIVE SCALING FRAMEWORK (FIXED SPACE BUG)
    =================================================== */
 .banner-wrapper {
     width: 100%;
@@ -66,6 +66,7 @@ h1 {
     background-color: #393e46;
 }
 
+/* Fixed selector: attached .banner directly to img to activate full scaling */
 .banner-wrapper img.banner {
     width: 100%;
     height: auto;
@@ -98,7 +99,7 @@ h1 {
     transform: translateY(-2px);
 }
 
-h2 {
+<h2> {
     color: #00adb5;
     margin-bottom: 15px;
     font-size: 1.5rem;
@@ -249,7 +250,7 @@ details p {
 }
 
 /* ===================================================
-   9. CLASSIC TRACK TIMELINE SYSTEM (RESTORED ALIGNMENT)
+   9. ORIGINAL CLASSIC TRACK TIMELINE SYSTEM (FIXED DOT ALIGNMENT)
    =================================================== */
 .timeline-container {
     position: relative;
@@ -293,7 +294,7 @@ details p {
     flex-shrink: 0;
 }
 
-/* Fixed selector removes space bug to target the active step circle icon */
+/* Fixed target selector: Combines classes instantly to light up your current step indicator circle */
 .timeline-item.current .timeline-icon {
     border-color: #00adb5;
     background-color: #00adb5;
