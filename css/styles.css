@@ -55,22 +55,23 @@ h1 {
 }
 
 /* ===================================================
-   3. BANNER FULL WINDOW ENGINE (FIXED MASSIVE HEIGHT)
+   3. BANNER FIXED FULL-WINDOW ENGINE
    =================================================== */
 .banner-wrapper {
     width: 100%;
-    max-height: 320px; /* Clamps the height perfectly so CTA boxes stay high up */
+    max-height: 380px; /* Limits absolute height on desktop monitors */
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     background-color: #393e46;
-    margin: 0 0 2rem 0;
+    margin: 0;
 }
 
 .banner-wrapper img.banner {
     width: 100%;
-    height: 320px;
-    object-fit: cover; /* Stretches window edge to edge without distorting */
-    object-position: center 32%; /* Keeps your custom text panel graphics front and center */
+    height: 100%;
+    max-height: 380px;
+    object-fit: cover; /* Spans edge-to-edge naturally */
+    object-position: center 30%; /* Focuses directly on the poster typography */
     display: block;
 }
 
@@ -81,7 +82,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin: 10px 0 40px 0;
+    margin: 30px 0 40px 0; /* Creates clean framing margins */
 }
 
 .card {
@@ -250,7 +251,7 @@ details p {
 }
 
 /* ===================================================
-   9. ORIGINAL CLASSIC TRACK TIMELINE SYSTEM (ALIGNED FIX)
+   9. ORIGINAL CLASSIC TRACK TIMELINE SYSTEM
    =================================================== */
 .timeline-container {
     position: relative;
@@ -294,7 +295,7 @@ details p {
     flex-shrink: 0;
 }
 
-/* Fixed spacing target token to bring your vertical track line and green dot back */
+/* Cleaned up typo spacing rule to reactivate your green indicator aura */
 .timeline-item.current .timeline-icon {
     border-color: #00adb5;
     background-color: #00adb5;
@@ -334,5 +335,5 @@ details p {
     h1 { font-size: 1.8rem; }
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
     .ekg-line { left: 32px; }
-    .banner-wrapper, .banner-wrapper img.banner { height: 160px; max-height: 160px; }
+    .banner-wrapper, .banner-wrapper img.banner { height: 180px; max-height: 180px; }
 }
