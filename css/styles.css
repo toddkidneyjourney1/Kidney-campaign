@@ -43,7 +43,7 @@
     flex-shrink: 0;
 }
 
-/* CORRECTED: Removed the space between .timeline-item and .current */
+/* NO SPACE between .timeline-item and .current */
 .timeline-item.current .timeline-icon {
     border-color: #00adb5;
     background-color: #00adb5;
