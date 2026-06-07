@@ -1,588 +1,293 @@
-/* ========================================
-   KIDNEY CAMPAIGN WEBSITE
-   Modern, Accessible Dark Theme Design
-   ======================================== */
-
-/* Root Variables */
-:root {
-    --color-bg-primary: #0b131f;
-    --color-bg-secondary: #111e30;
-    --color-bg-tertiary: #1e293b;
-    --color-border: #1f324d;
-    --color-text-primary: #f0f4f8;
-    --color-text-secondary: #94a3b8;
-    --color-text-muted: #64748b;
-    --color-accent-blue: #38bdf8;
-    --color-accent-green: #10b981;
-    --color-accent-green-hover: #059669;
-    --color-accent-blue-hover: #0284c7;
-    --color-success: #10b981;
-    
-    /* Spacing & Utilities */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --border-radius: 12px;
-    --transition: all 0.3s ease;
-}
-
-/* Reset & Base Styles */
+/* Core Document & Layout Standards */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-primary);
-    max-width: 900px;
+    background-color: #222831;
+    color: #eeeeee;
+    padding: 0;
+}
+
+main {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: var(--spacing-md);
+    padding: 20px;
 }
 
-/* Skip Link */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--color-accent-green);
-    color: white;
-    padding: var(--spacing-sm);
-    text-decoration: none;
-    z-index: 100;
+/* Header & Banner Elements */
+header {
+    background-color: #393e46;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 4px solid #00adb5;
 }
 
-.skip-link:focus {
-    top: 0;
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Typography */
-h1, h2, h3 {
-    font-weight: 600;
+.profile-img {
+    border-radius: 50%;
+    border: 4px solid #00adb5;
+    margin-bottom: 20px;
+    object-fit: cover;
 }
 
 h1 {
-    color: white;
+    color: #00adb5;
+    margin-bottom: 15px;
     font-size: 2.5rem;
-    letter-spacing: 0.5px;
-    margin-top: var(--spacing-sm);
-    line-height: 1.2;
-    word-wrap: break-word;
 }
 
-h2 {
-    color: white;
-    font-size: 1.5rem;
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-}
-
-h2:first-child {
-    margin-top: 0;
-}
-
-h3 {
-    color: var(--color-accent-blue);
+.tagline {
     font-size: 1.1rem;
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
-    word-wrap: break-word;
+    color: #eeeeee;
 }
 
-p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-strong {
-    color: white;
-}
-
-small {
-    color: var(--color-text-muted);
-    display: inline-block;
-    margin-top: var(--spacing-xs);
-}
-
-/* Header */
-header {
-    text-align: center;
-    padding: var(--spacing-xl) var(--spacing-md);
-    background: var(--color-bg-secondary);
-    border-radius: var(--border-radius);
- /* Banner Image */
 .banner {
     width: 100%;
-    height: auto; /* This is the key: it allows the height to scale naturally with the width */
-    max-height: 400px; /* Limits how tall it can get */
+    max-height: 350px;
     object-fit: cover;
-    border-radius: var(--border-radius);
-    margin-bottom: var(--spacing-lg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: block;
 }
-    align-items: center;
-}
 
-
-/* Grid Layout */
+/* Layout Grid & Dynamic Action Cards */
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
 }
 
-@media (max-width: 680px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-}
-
-/* Card Component */
 .card {
-    background: var(--color-bg-secondary);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border: 1px solid var(--color-border);
+    background-color: #393e46;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: var(--transition);
+    border-top: 4px solid #393e46;
+    transition: transform 0.2s ease;
 }
 
 .card:hover {
-    border-color: var(--color-accent-blue);
-    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.1);
-}
-
-.card h2 {
-    margin-top: 0;
-}
-
-.card p {
-    color: var(--color-text-secondary);
-    font-size: 0.95rem;
-}
-
-/* Button Styles */
-.btn {
-    display: inline-block;
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    transition: var(--transition);
-    margin-top: var(--spacing-lg);
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    outline-offset: 2px;
-    word-wrap: break-word;
-}
-
-.btn-blue {
-    background-color: var(--color-accent-blue);
-}
-
-.btn-blue:hover {
-    background-color: var(--color-accent-blue-hover);
     transform: translateY(-2px);
+}
+
+h2 {
+    color: #00adb5;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Global Button Styling Framework */
+.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
 }
 
 .btn-green {
-    background-color: var(--color-accent-green);
+    background-color: #00adb5;
+    color: #ffffff;
 }
 
-.btn-green:hover {
-    background-color: var(--color-accent-green-hover);
-    transform: translateY(-2px);
+.btn-blue {
+    background-color: #2d4059;
+    color: #ffffff;
 }
 
-/* Progress Bar Component */
+/* GoFundMe Layout & Animation Progress Elements */
 .progress-container {
-    margin-top: var(--spacing-md);
+    margin: 25px 0;
 }
 
-.progress-labels {
+.progress-header {
     display: flex;
     justify-content: space-between;
-    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
     font-weight: bold;
-    margin-bottom: var(--spacing-xs);
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
 }
 
 .progress-bar {
-    background-color: var(--color-bg-tertiary);
-    border-radius: 20px;
-    position: relative;
-    height: 12px;
+    background-color: #222831;
+    border-radius: 10px;
+    height: 24px;
+    width: 100%;
     overflow: hidden;
-    border: 1px solid var(--color-border);
+    border: 1px solid #444;
 }
 
 .progress-fill {
-    background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-green));
+    background: linear-gradient(90deg, #00adb5, #00fff2);
     height: 100%;
-    border-radius: 20px;
-    transition: width 0.3s ease;
-    width: 0%;
+    width: 0%; /* Populated dynamically via JS engine */
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Story Section */
-.story-section {
-    background: var(--color-bg-secondary);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid var(--color-border);
+/* Structural Story, List, & Layout Sections */
+.story-section, .faq-section, .timeline-section {
+    background-color: #393e46;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-.story-section h2 {
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--spacing-md);
-}
-
-/* Lists */
 ul {
-    padding-left: 20px;
-    color: var(--color-text-secondary);
+    list-style-position: inside;
+    margin-bottom: 20px;
 }
 
 li {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 15px;
 }
 
-li strong {
-    color: white;
-}
-
-/* Details/Summary (Accordion) */
 details {
-    margin-top: var(--spacing-md);
-    cursor: pointer;
-}
-
-summary {
-    cursor: pointer;
-    user-select: none;
-    outline-offset: 2px;
-    padding: var(--spacing-sm);
-    margin: calc(var(--spacing-sm) * -1);
+    background-color: #222831;
+    padding: 15px;
     border-radius: 6px;
-    transition: var(--transition);
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-summary:hover {
-    color: var(--color-accent-blue);
-    background-color: rgba(56, 189, 248, 0.05);
-}
-
-summary:focus {
-    outline: 2px solid var(--color-accent-blue);
+details summary {
+    outline: none;
 }
 
 details p {
-    margin-top: var(--spacing-md);
-    padding-left: var(--spacing-md);
-    color: var(--color-text-secondary);
+    margin-top: 10px;
+    margin-bottom: 0;
+    cursor: default;
 }
 
-/* Share Box */
+/* Strategic Share Layout Options */
 .share-box {
-    background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-secondary) 100%);
-    border: 1px dashed var(--color-accent-blue);
-    padding: var(--spacing-lg);
+    background-color: #222831;
+    border: 2px dashed #00adb5;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
     text-align: center;
-    border-radius: var(--border-radius);
-    margin-top: var(--spacing-lg);
 }
 
-.share-box h3 {
-    margin-top: 0;
-    color: white;
+.share-box .btn {
+    display: inline-block;
+    width: auto;
+    margin: 10px 5px 0 5px;
 }
 
-.share-box p {
-    font-size: 0.95rem;
-    margin-bottom: var(--spacing-md);
-}
-
-/* Toast Notification */
+/* Dynamic Notification Toast */
 .toast {
+    visibility: hidden;
+    min-width: 280px;
+    background-color: #00adb5;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 16px;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-success);
-    color: white;
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    z-index: 1000;
-    max-width: 300px;
-    word-wrap: break-word;
+    z-index: 999;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 .toast.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-@media (max-width: 480px) {
-    .toast {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-    }
-}
-
-/* FAQ Section */
-.faq-section {
-    background: var(--color-bg-secondary);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid var(--color-border);
-}
-
-.faq-item {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-lg);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.faq-item:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-/* ========================================
-   EKG Horizontal Timeline Flexbox Styles
-   ======================================== */
-.timeline-section {
-    background: var(--color-bg-secondary);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid var(--color-border);
-    position: relative;
-    overflow: hidden;
-}
-
+/* Journey Timeline Framework Elements */
 .timeline-container {
-    display: flex;
-    flex-direction: column; /* Default stack layout for mobile devices */
-    gap: 2.5rem;
     position: relative;
-    margin-top: 2rem;
-}
-/* Add this to css/styles.css */
-.timeline-section {
-    margin-bottom: 2rem;
-}
-/* Base Timeline Item Settings */
-.timeline-item {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    background: rgba(30, 41, 59, 0.7);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    margin-top: 30px;
+    padding-left: 30px;
 }
 
-/* Highlight the Current Active Stage */
-.timeline-item.current {
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-    transform: translateY(-5px);
+.ekg-line {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #222831;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
 }
 
 .timeline-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Hide line element natively on mobile stacks */
-.ekg-line {
-    display: none;
-}
-
-/* Desktop Styles: Turn it into a horizontal EKG flow */
-@media (min-width: 768px) {
-    .timeline-container {
-        flex-direction: row !important;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 1.5rem;
-    }
-
-    /* The EKG Line Grid Path */
-    .ekg-line {
-        display: block !important;
-        position: absolute;
-        top: 2.5rem;
-        left: 5%;
-        width: 90%;
-        height: 20px;
-        z-index: 1;
-        background-image: linear-gradient(90deg, transparent 0%, #3b82f6 45%, transparent 55%);
-        background-size: 200% 100%;
-        animation: ekg-pulse 4s linear infinite;
-        opacity: 0.5;
-        
-        /* Mask pattern to form the EKG visual line */
-        -webkit-clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
-        clip-path: polygon(0% 50%, 40% 50%, 43% 10%, 46% 90%, 49% 30%, 52% 60%, 55% 50%, 100% 50%);
-    }
-    
-    .timeline-item {
-        background: transparent;
-        border: 1px solid transparent;
-        padding: 1rem 0.5rem;
-    }
-    
-    .timeline-item.current {
-        background: rgba(30, 41, 59, 0.5);
-        border: 1px solid rgba(59, 130, 246, 0.4) !important;
-    }
-}
-
-/* Smooth Heartbeat Lighting Effect Animation */
-@keyframes ekg-pulse {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-/* Testimonials/Medical Support Section */
-.testimonials-section {
-    background: var(--color-bg-secondary);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid var(--color-accent-green);
-}
-
-.testimonials-section h2 {
-    color: var(--color-accent-green);
-    border-bottom: 1px solid var(--color-accent-green);
-    padding-bottom: var(--spacing-md);
-    margin-top: 0;
-}
-
-/* Contact Section */
-.contact-section {
-    background-color: var(--color-bg-secondary); /* Matches your dark theme */
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid var(--color-border);
-}
-}
-
-.contact-section h2 {
-    color: white;
-    margin-top: 0;
-}
-
-.contact-section p {
-    color: white;
-}
-
-.contact-section .btn {
-    background-color: white;
-    color: var(--color-accent-green);
-    margin-top: var(--spacing-md);
-}
-
-.contact-section .btn:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: var(--spacing-lg) var(--spacing-md);
-    border-top: 1px solid var(--color-border);
-    margin-top: var(--spacing-xl);
-    color: var(--color-text-muted);
+    position: absolute;
+    left: -34px;
+    top: 0;
+    background-color: #393e46;
+    border: 2px solid #222831;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.9rem;
 }
 
-footer p {
-    margin-bottom: var(--spacing-sm);
+.timeline-item.current .timeline-icon {
+    border-color: #00adb5;
+    background-color: #00adb5;
 }
 
-/* Accessibility: Focus Visible */
-:focus-visible {
-    outline: 2px solid var(--color-accent-blue);
-    outline-offset: 2px;
+.timeline-item h3 {
+    color: #eeeeee;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
-/* Accessibility: Prefers Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+.timeline-item.current h3 {
+    color: #00adb5;
 }
 
-/* Print Styles */
-@media print {
-    .btn, .skip-link, .toast, .share-box {
-        display: none;
-    }
-    body {
-        background: white;
-        color: black;
-        max-width: 100%;
-    }
-    header, .card, .story-section, .faq-section, .timeline-section, .testimonials-section, .contact-section {
-        background: white;
-        color: black;
-        border: 1px solid #ccc;
-        page-break-inside: avoid;
-    }
-    .progress-fill, .progress-bar {
-        background: #e0e0e0;
-    }
-    a {
-        color: #0066cc;
-    }
+/* Layout Keyframe Engines */
+@keyframes fadein {
+    from { bottom: 0; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { bottom: 30px; opacity: 1; }
+    to { bottom: 0; opacity: 0; }
+}
+
+/* Responsive Adaptive Viewports */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
 }
