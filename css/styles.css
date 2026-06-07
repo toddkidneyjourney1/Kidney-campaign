@@ -55,13 +55,17 @@ h1 {
 }
 
 /* ===================================================
-   3. BANNER RESPONSIVE SCALING FIX (FIXED TYPO)
+   3. BANNER FULL WINDOW ENGINE (FIXED STRETCH)
    =================================================== */
 .banner-wrapper {
-    width: 100%;
-    margin: 2rem 0 3rem 0;
+    width: 100vw; /* Forces the container to match the absolute edges of the window */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 3rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    border-radius: 8px;
     overflow: hidden;
     background-color: #393e46;
 }
@@ -69,10 +73,10 @@ h1 {
 .banner-wrapper img.banner {
     width: 100%;
     height: auto;
-    max-height: 380px; /* Limits size nicely on large desktop displays */
-    object-fit: contain; /* Scales the whole graphic into the viewport without cropping edges */
+    max-height: 420px; /* Gives it a clean, cinematic display height */
+    object-fit: cover; /* Commands the art to scale completely to the screen edges */
+    object-position: center 35%; /* Centers your custom canvas text graphics perfectly */
     display: block;
-    margin: 0 auto;
 }
 
 /* ===================================================
@@ -251,7 +255,7 @@ details p {
 }
 
 /* ===================================================
-   9. ORIGINAL CLASSIC TRACK TIMELINE SYSTEM (RESTORED ALIGNMENT)
+   9. ORIGINAL CLASSIC TRACK TIMELINE SYSTEM (RESTORED MATCH)
    =================================================== */
 .timeline-container {
     position: relative;
@@ -295,7 +299,7 @@ details p {
     flex-shrink: 0;
 }
 
-/* Fixed spacing selector to light up your current active step trail cleanly */
+/* Connects cleanly with your direct timeline markup class rules */
 .timeline-item.current .timeline-icon {
     border-color: #00adb5;
     background-color: #00adb5;
@@ -335,4 +339,5 @@ details p {
     h1 { font-size: 1.8rem; }
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
     .ekg-line { left: 32px; }
+    .banner-wrapper { margin-bottom: 1.5rem; }
 }
