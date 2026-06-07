@@ -1,54 +1,36 @@
-/* ===================================================
-   1. CORE DOCUMENT & LAYOUT STANDARDS
-   =================================================== */
+/* 1. LAYOUT & TIMELINE EKG SYSTEM */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; background-color: #222831; color: #eeeeee; }
+body { font-family: sans-serif; background-color: #222831; color: #eeeeee; }
 main { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-/* ===================================================
-   2. HEADER & PROFILE ELEMENTS
-   =================================================== */
-header { background-color: #393e46; padding: 40px 20px; text-align: center; border-bottom: 4px solid #00adb5; }
-.profile-img { border-radius: 50%; border: 4px solid #00adb5; margin-bottom: 20px; object-fit: cover; }
-h1 { color: #00adb5; margin-bottom: 15px; font-size: 2.5rem; }
+/* EKG TIMELINE */
+.timeline-container { position: relative; margin-top: 20px; padding-left: 20px; }
+.ekg-line { 
+    position: absolute; left: 32px; top: 10px; bottom: 10px; 
+    width: 2px; background-color: #00adb5; z-index: 1; 
+}
+.timeline-item { 
+    display: flex; align-items: flex-start; gap: 15px; 
+    margin-bottom: 30px; position: relative; z-index: 2; 
+}
+.timeline-icon { 
+    background-color: #393e46; border: 2px solid #00adb5; 
+    border-radius: 50%; width: 26px; height: 26px; 
+    display: flex; align-items: center; justify-content: center; z-index: 2;
+}
 
-/* ===================================================
-   3. BANNER SCALING (FIXED)
-   =================================================== */
+/* NO SPACE BETWEEN .timeline-item AND .current */
+.timeline-item.current .timeline-icon {
+    background-color: #00adb5;
+    box-shadow: 0 0 10px #00adb5;
+}
+.timeline-item.current h3 { color: #00adb5; }/* 2. OTHER ELEMENTS */
 .banner-wrapper { width: 100%; margin: 2rem 0; border-radius: 8px; overflow: hidden; background-color: #393e46; }
 .banner-wrapper img.banner { width: 100%; height: auto; display: block; }
-
-/* ===================================================
-   4. LAYOUT GRID & ACTION CARDS
-   =================================================== */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px; }
 .card { background-color: #393e46; border-radius: 8px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-
-/* ===================================================
-   5. BUTTONS
-   =================================================== */
 .btn { display: block; width: 100%; text-align: center; padding: 14px; border-radius: 6px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; }
 .btn-green { background-color: #00adb5; color: #fff; }
 .btn-blue { background-color: #2d4059; color: #fff; }
-
-/* ===================================================
-   6. ORIGINAL EKG TIMELINE SYSTEM (FIXED SELECTORS)
-   =================================================== */
-.timeline-container { position: relative; margin-top: 20px; padding-left: 20px; }
-.ekg-line { position: absolute; left: 32px; top: 0; bottom: 0; width: 2px; background-color: #222831; z-index: 1; }
-.timeline-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px; position: relative; z-index: 2; }
-.timeline-icon { background-color: #393e46; border: 2px solid #222831; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
-
-/* CRITICAL: Ensure NO SPACE between .timeline-item and .current */
-.timeline-item.current .timeline-icon {
-    border-color: #00adb5;
-    background-color: #00adb5;
-    box-shadow: 0 0 8px #00adb5;
-}
-.timeline-item.current h3 { color: #00adb5; }
-
-/* ===================================================
-   7. UTILITIES
-   =================================================== */
 .story-section, .faq-section { background-color: #393e46; padding: 30px; border-radius: 8px; margin-bottom: 40px; }
 details { background-color: #222831; padding: 15px; border-radius: 6px; margin-top: 10px; cursor: pointer; }
