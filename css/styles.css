@@ -55,23 +55,22 @@ h1 {
 }
 
 /* ===================================================
-   3. BANNER FIXED FULL-WINDOW ENGINE (FIXED TYPO)
+   3. BANNER RESPONSIVE SCALING FRAMEWORK
    =================================================== */
 .banner-wrapper {
     width: 100%;
-    max-height: 320px; /* Limits size cleanly so CTA boxes sit immediately underneath */
-    overflow: hidden;
+    margin: 2rem 0 3rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
     background-color: #393e46;
-    margin: 0;
 }
 
 .banner-wrapper img.banner {
     width: 100%;
-    height: 320px;
-    object-fit: cover; /* Commands full landscape stretch without crushing proportions */
-    object-position: center 30%; /* Locks text focus points directly on center area */
+    height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 /* ===================================================
@@ -81,7 +80,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin: 30px 0 40px 0;
+    margin: 10px 0 30px 0;
 }
 
 .card {
@@ -250,7 +249,7 @@ details p {
 }
 
 /* ===================================================
-   9. ORIGINAL CLASSIC TRACK TIMELINE SYSTEM
+   9. CLASSIC TRACK TIMELINE SYSTEM (RESTORED ALIGNMENT)
    =================================================== */
 .timeline-container {
     position: relative;
@@ -294,7 +293,7 @@ details p {
     flex-shrink: 0;
 }
 
-/* Fully addresses class spacing mismatch to link up the green aura anchor node */
+/* Fixed selector removes space bug to target the active step circle icon */
 .timeline-item.current .timeline-icon {
     border-color: #00adb5;
     background-color: #00adb5;
@@ -334,5 +333,4 @@ details p {
     h1 { font-size: 1.8rem; }
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
     .ekg-line { left: 32px; }
-    .banner-wrapper, .banner-wrapper img.banner { height: 180px; max-height: 180px; }
 }
