@@ -34,8 +34,6 @@
         </div>
     </header>
 
-    <img src="images/banner.jpg" alt="Kidney campaign banner image" class="banner" loading="lazy">
-
     <main id="main">
         <section class="grid">
             <div class="card">
@@ -63,6 +61,10 @@
                 <a href="https://gofund.me/57ee0176d" target="_blank" rel="noopener noreferrer" class="btn btn-blue" aria-label="Donate to Todd's kidney journey on GoFundMe">Donate on GoFundMe</a>
             </div>
         </section>
+
+        <div class="banner-wrapper" style="width: 100%; max-height: 250px; overflow: hidden; border-radius: 8px; margin: 2rem 0 3rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <img src="images/banner.jpg" alt="Kidney campaign banner image" class="banner" loading="lazy" style="width: 100%; height: 250px; object-fit: cover; object-position: center;">
+        </div>
 
         <section class="story-section">
             <h2>The Challenge</h2>
@@ -143,37 +145,41 @@
             </div>
         </section>
 
-        <section class="timeline-section">
-            <div class="card">
-                <h2>My Journey</h2>
-                <div class="timeline-container">
-                    <div class="ekg-line"></div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon">🩸</div>
-                        <h3>Dialysis Treatment</h3>
-                        <p>Managing kidney function through regular treatments while waiting for my match.</p>
+        <section class="timeline-section" style="background-color: #393e46; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+            <div class="timeline-card">
+                <h2 style="color: #00adb5; margin-bottom: 25px; font-size: 1.5rem;">My Journey</h2>
+                <div class="timeline-container" style="position: relative; padding-left: 35px; border-left: 3px solid #222831; margin-left: 10px;">
+                    
+                    <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">🩸</span>
+                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Dialysis Treatment</h3>
+                        <p style="margin: 0; color: #ccc;">Managing kidney function through regular treatments while waiting for my match.</p>
                     </div>
-                    <div class="timeline-item current">
-                        <div class="timeline-icon">🔍</div>
-                        <h3>Seeking Living Donor (NOW)</h3>
-                        <p>Active search phase. If you or someone you know might be a match, please reach out.</p>
+
+                    <div class="timeline-item current" style="position: relative; margin-bottom: 35px;">
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #00adb5; border-radius: 50%; font-size: 1.2rem; padding: 2px; box-shadow: 0 0 8px #00adb5;">🔍</span>
+                        <h3 style="font-size: 1.1rem; color: #00adb5; margin-bottom: 5px; font-weight: bold;">Seeking Living Donor (NOW)</h3>
+                        <p style="margin: 0; color: #eee;">Active search phase. If you or someone you know might be a match, please reach out.</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon">⚕️</div>
-                        <h3>Pre-Transplant Prep</h3>
-                        <p>Final clearances and coordination with HCA Florida Largo.</p>
+
+                    <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">⚕️</span>
+                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Pre-Transplant Prep</h3>
+                        <p style="margin: 0; color: #ccc;">Final clearances and coordination with HCA Florida Largo.</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon">✨</div>
-                        <h3>Transplant & Recovery</h3>
-                        <p>The beginning of my new chapter with restored health.</p>
+
+                    <div class="timeline-item" style="position: relative;">
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">✨</span>
+                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Transplant & Recovery</h3>
+                        <p style="margin: 0; color: #ccc;">The beginning of my new chapter with restored health.</p>
                     </div>
+                    
                 </div>
             </div>
         </section>
 
         <div style="text-align: center; margin: 40px 0;">
-            <a href="#top" class="btn btn-blue" style="text-decoration: none; padding: 10px 20px;">🏠 Go Back to Top</a>
+            <a href="#top" class="btn btn-blue" style="text-decoration: none; padding: 10px 20px; display: inline-block; width: auto;">🏠 Go Back to Top</a>
         </div>
 
         <footer role="contentinfo" style="margin-top: 40px; padding: 20px; text-align: center; border-top: 1px solid #ccc;">
