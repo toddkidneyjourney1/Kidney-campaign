@@ -55,7 +55,7 @@ h1 {
 }
 
 /* ===================================================
-   3. BANNER RESPONSIVE SCALING FIX (NO CLIPPING)
+   3. BANNER RESPONSIVE SCALING FIX (FIXED TYPO)
    =================================================== */
 .banner-wrapper {
     width: 100%;
@@ -69,8 +69,8 @@ h1 {
 .banner-wrapper img.banner {
     width: 100%;
     height: auto;
-    max-height: 380px; /* Limits large heights on massive screens */
-    object-fit: contain; /* Scales the whole artwork down inside the box so nothing cuts off */
+    max-height: 380px; /* Limits size nicely on large desktop displays */
+    object-fit: contain; /* Scales the whole graphic into the viewport without cropping edges */
     display: block;
     margin: 0 auto;
 }
@@ -251,7 +251,7 @@ details p {
 }
 
 /* ===================================================
-   9. ORIGINAL TRACK TIMELINE SYSTEM (FAVORITE)
+   9. ORIGINAL CLASSIC TRACK TIMELINE SYSTEM (RESTORED ALIGNMENT)
    =================================================== */
 .timeline-container {
     position: relative;
@@ -295,6 +295,7 @@ details p {
     flex-shrink: 0;
 }
 
+/* Fixed spacing selector to light up your current active step trail cleanly */
 .timeline-item.current .timeline-icon {
     border-color: #00adb5;
     background-color: #00adb5;
