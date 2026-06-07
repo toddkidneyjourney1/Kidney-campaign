@@ -1,4 +1,6 @@
-/* Core Document & Layout Standards */
+/* ===================================================
+   1. CORE DOCUMENT & LAYOUT STANDARDS
+   =================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +21,9 @@ main {
     padding: 20px;
 }
 
-/* Header & Banner Elements */
+/* ===================================================
+   2. HEADER & PROFILE ELEMENTS
+   =================================================== */
 header {
     background-color: #393e46;
     padding: 40px 20px;
@@ -50,19 +54,34 @@ h1 {
     color: #eeeeee;
 }
 
-.banner {
+/* ===================================================
+   3. BANNER FIXED VIEWPORT ADJUSTMENTS
+   =================================================== */
+.banner-wrapper {
     width: 100%;
-    max-height: 350px;
-    object-fit: cover;
+    max-height: 280px; /* Forces a perfect sleeker desktop profile */
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 2rem 0 3rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.banner-wrapper img.banner {
+    width: 100%;
+    height: 280px;
+    object-fit: cover; /* Prevents stretching */
+    object-position: center 35%; /* Centers the sweet spot of the art */
     display: block;
 }
 
-/* Layout Grid & Dynamic Action Cards */
+/* ===================================================
+   4. LAYOUT GRID & DYNAMIC ACTION CARDS
+   =================================================== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin: 40px 0;
+    margin: 20px 0 40px 0;
 }
 
 .card {
@@ -73,7 +92,6 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-top: 4px solid #393e46;
     transition: transform 0.2s ease;
 }
 
@@ -91,7 +109,9 @@ p {
     margin-bottom: 20px;
 }
 
-/* Global Button Styling Framework */
+/* ===================================================
+   5. GLOBAL BUTTON STYLING FRAMEWORK
+   =================================================== */
 .btn {
     display: block;
     width: 100%;
@@ -120,7 +140,9 @@ p {
     color: #ffffff;
 }
 
-/* GoFundMe Layout & Animation Progress Elements */
+/* ===================================================
+   6. GOFUNDME LIVE PROGRESS BAR ANIMATIONS
+   =================================================== */
 .progress-container {
     margin: 25px 0;
 }
@@ -145,12 +167,14 @@ p {
 .progress-fill {
     background: linear-gradient(90deg, #00adb5, #00fff2);
     height: 100%;
-    width: 0%; /* Populated dynamically via JS engine */
+    width: 0%; /* Filled automatically by your JS engine */
     transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Structural Story, List, & Layout Sections */
-.story-section, .faq-section, .timeline-section {
+/* ===================================================
+   7. STRUCTURAL CONTENT SECTIONS (THE CHALLENGE, FAQ)
+   =================================================== */
+.story-section, .faq-section {
     background-color: #393e46;
     padding: 30px;
     border-radius: 8px;
@@ -185,7 +209,9 @@ details p {
     cursor: default;
 }
 
-/* Strategic Share Layout Options */
+/* ===================================================
+   8. STRATEGIC SHARE CONTROLLERS & TOASTS
+   =================================================== */
 .share-box {
     background-color: #222831;
     border: 2px dashed #00adb5;
@@ -201,7 +227,6 @@ details p {
     margin: 10px 5px 0 5px;
 }
 
-/* Dynamic Notification Toast */
 .toast {
     visibility: hidden;
     min-width: 280px;
@@ -224,58 +249,54 @@ details p {
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-/* Journey Timeline Framework Elements */
-.timeline-container {
-    position: relative;
-    margin-top: 30px;
-    padding-left: 30px;
+/* ===================================================
+   9. TIMELINE LAYOUT DESIGN
+   =================================================== */
+.timeline-section {
+    background-color: #393e46;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-.ekg-line {
-    position: absolute;
-    left: 8px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background-color: #222831;
+.timeline-container {
+    position: relative;
+    padding-left: 35px;
+    border-left: 3px solid #222831;
+    margin-left: 15px;
+    margin-top: 20px;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
 }
 
 .timeline-icon {
     position: absolute;
-    left: -34px;
-    top: 0;
-    background-color: #393e46;
-    border: 2px solid #222831;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
+    left: -49px;
+    top: -2px;
+    background: #393e46;
+    font-size: 1.2rem;
+    padding: 2px;
+    width: 26px;
+    text-align: center;
 }
 
 .timeline-item.current .timeline-icon {
-    border-color: #00adb5;
-    background-color: #00adb5;
+    background: #00adb5;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00adb5;
 }
 
-.timeline-item h3 {
-    color: #eeeeee;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-.timeline-item.current h3 {
-    color: #00adb5;
-}
-
-/* Layout Keyframe Engines */
+/* ===================================================
+   10. KEYFRAME MECHANICS & RESPONSIVE DESIGN
+   =================================================== */
 @keyframes fadein {
     from { bottom: 0; opacity: 0; }
     to { bottom: 30px; opacity: 1; }
@@ -286,8 +307,8 @@ details p {
     to { bottom: 0; opacity: 0; }
 }
 
-/* Responsive Adaptive Viewports */
 @media (max-width: 600px) {
     h1 { font-size: 1.8rem; }
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
+    .banner-wrapper, .banner-wrapper img.banner { height: 180px; max-height: 180px; }
 }
