@@ -173,10 +173,8 @@
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-icon">✨</div>
-                        <div>
-                            <h3>Transplant & Recovery</h3>
-                            <p>The beginning of my new chapter with restored health.</p>
-                        </div>
+                        <h3>Transplant & Recovery</h3>
+                        <p>The beginning of my new chapter with restored health.</p>
                     </div>
                 </div>
             </div>
@@ -194,10 +192,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // ===================================================
-            // 1. GOFUNDME COUNTER CONFIGURATION
-            // ===================================================
             const currentRaised = 175; 
             const fundingGoal = 5000;
 
@@ -221,9 +215,6 @@
                 }
             }
 
-            // ===================================================
-            // 2. RANDOM KIDNEY FACTS CONTROLLER
-            // ===================================================
             const kidneyFacts = [
                 "Your kidneys filter about 200 quarts of fluid every day, clearing out waste and keeping your body chemistry in balance.",
                 "Even though they make up only about 0.5% of your body weight, your kidneys receive about 20-25% of the heart's total blood output.",
@@ -242,16 +233,12 @@
                 });
             }
 
-            // ===================================================
-            // 3. SHARE CAMPAIGN BUTTON CONTROLLER
-            // ===================================================
             const shareBtn = document.getElementById('share-btn');
             const toast = document.getElementById('toast-notification');
 
             if (shareBtn) {
                 shareBtn.addEventListener('click', () => {
                     const siteUrl = window.location.href;
-                    
                     navigator.clipboard.writeText(siteUrl).then(() => {
                         if (toast) {
                             toast.textContent = "📋 Campaign link copied to clipboard!";
