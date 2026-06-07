@@ -13,10 +13,9 @@ header { background-color: #393e46; padding: 40px 20px; text-align: center; bord
 h1 { color: #00adb5; margin-bottom: 15px; font-size: 2.5rem; }
 
 /* ===================================================
-   3. BANNER SCALING (FIXED SELECTOR)
+   3. BANNER SCALING
    =================================================== */
 .banner-wrapper { width: 100%; margin: 2rem 0; border-radius: 8px; overflow: hidden; background-color: #393e46; }
-/* Fixed: .banner-wrapper img.banner removes the space bug */
 .banner-wrapper img.banner { width: 100%; height: auto; display: block; }
 
 /* ===================================================
@@ -33,14 +32,14 @@ h1 { color: #00adb5; margin-bottom: 15px; font-size: 2.5rem; }
 .btn-blue { background-color: #2d4059; color: #fff; }
 
 /* ===================================================
-   6. TIMELINE (FIXED SELECTOR - NO SPACES)
+   6. ORIGINAL EKG TIMELINE SYSTEM (FIXED)
    =================================================== */
 .timeline-container { position: relative; margin-top: 20px; padding-left: 20px; }
 .ekg-line { position: absolute; left: 32px; top: 0; bottom: 0; width: 2px; background-color: #222831; z-index: 1; }
 .timeline-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px; position: relative; z-index: 2; }
 .timeline-icon { background-color: #393e46; border: 2px solid #222831; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
 
-/* Fixed: .timeline-item.current removes the space to target the element itself */
+/* FIXED: No space between .timeline-item and .current */
 .timeline-item.current .timeline-icon {
     border-color: #00adb5;
     background-color: #00adb5;
