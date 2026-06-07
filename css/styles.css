@@ -55,24 +55,23 @@ h1 {
 }
 
 /* ===================================================
-   3. BANNER FIXED VIEWPORT ADJUSTMENTS
+   3. BANNER FIXED VIEWPORT ADJUSTMENTS (FIXED)
    =================================================== */
-/* Optimized Banner Styles */
 .banner-wrapper {
     width: 100%;
-    margin: 2rem 0 3rem 0;
-    border-radius: 8px;
+    max-height: 250px; /* Forces a perfect sleek letterbox height on desktop */
     overflow: hidden;
+    border-radius: 8px;
+    margin: 2rem 0 3rem 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    line-height: 0; /* Prevents tiny gaps below the image */
 }
 
 .banner-wrapper img.banner {
     width: 100%;
-    height: auto; /* Allows the image to scale naturally based on width */
-    max-height: 400px; /* Limits height on huge screens */
+    height: 250px;
+    object-fit: cover; /* Prevents stretching and cropping distortion */
+    object-position: center 33%; /* Centers your custom canvas artwork beautifully */
     display: block;
-    object-fit: cover;
 }
 
 /* ===================================================
@@ -168,7 +167,7 @@ p {
 .progress-fill {
     background: linear-gradient(90deg, #00adb5, #00fff2);
     height: 100%;
-    width: 0%; /* Populated dynamically via JS engine */
+    width: 0%; 
     transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -251,27 +250,31 @@ details p {
 }
 
 /* ===================================================
-   9. TIMELINE LAYOUT DESIGN
+   9. ORIGINAL TRACK TIMELINE SYSTEM (RESTORED)
    =================================================== */
-.timeline-section {
-    background-color: #393e46;
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
 .timeline-container {
     position: relative;
-    padding-left: 35px;
-    border-left: 3px solid #222831;
-    margin-left: 15px;
     margin-top: 20px;
+    padding-left: 20px;
+}
+
+.ekg-line {
+    position: absolute;
+    left: 31px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #222831;
+    z-index: 1;
 }
 
 .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
     position: relative;
-    margin-bottom: 35px;
+    z-index: 2;
 }
 
 .timeline-item:last-child {
@@ -279,21 +282,38 @@ details p {
 }
 
 .timeline-icon {
-    position: absolute;
-    left: -49px;
-    top: -2px;
-    background: #393e46;
-    font-size: 1.2rem;
-    padding: 2px;
+    background-color: #393e46;
+    border: 2px solid #222831;
+    border-radius: 50%;
     width: 26px;
-    text-align: center;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
 }
 
-/* Fixed spacing target token to bring your timeline trail back alive */
 .timeline-item.current .timeline-icon {
-    background: #00adb5;
-    border-radius: 50%;
+    border-color: #00adb5;
+    background-color: #00adb5;
     box-shadow: 0 0 8px #00adb5;
+}
+
+.timeline-item h3 {
+    font-size: 1.1rem;
+    color: #eeeeee;
+    margin-bottom: 2px;
+}
+
+.timeline-item.current h3 {
+    color: #00adb5;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #ccc;
+    font-size: 0.95rem;
 }
 
 /* ===================================================
@@ -313,4 +333,5 @@ details p {
     h1 { font-size: 1.8rem; }
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
     .banner-wrapper, .banner-wrapper img.banner { height: 160px; max-height: 160px; }
+    .ekg-line { left: 31px; }
 }
