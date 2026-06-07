@@ -8,44 +8,22 @@
 </head>
 <body>
 
-    <div style="text-align: center; padding: 20px; background-color: #393e46;">
-        <button onclick="toggleLanguage()" style="padding: 10px 20px; cursor: pointer; background: #00adb5; border: none; color: white; border-radius: 5px;">Switch to Español / Switch to English</button>
+    <div style="text-align: center; padding: 20px;">
+        <button onclick="toggleLanguage()" style="padding: 10px 20px; cursor: pointer;">Switch to Español / Switch to English</button>
     </div>
 
     <div id="english-content">
-        <header role="banner">
-            <div class="header-content" style="padding: 20px;">
-                <h1>WANTED! A KIDNEY: A New Chapter</h1>
-                <p>My journey through the arts—including my time with The Laboratory Theater of Florida—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: I need a life-saving kidney transplant to continue living the life I love. Whether you can donate, contribute financially, or simply share this message, you have the power to save my life.</p>
-            </div>
-        </header>
         </div>
 
-    <div id="div-spanish-content" style="display:none; padding: 20px; max-width: 1100px; margin: 0 auto; color: #eeeeee;">
-        <h1>¡BUSCO UN RIÑÓN!</h1>
-        <p>Mi trayectoria a través de las artes—incluyendo mi tiempo con <em>The Laboratory Theater of Florida</em>—siempre se ha tratado de contar historias y encontrar luz en lo inesperado. Hoy, me enfrento a mi mayor desafío hasta ahora: <strong>Necesito un trasplante de riñón que me salve la vida para seguir viviendo la vida que amo.</strong> Ya sea que puedas donar, contribuir financieramente o simplemente compartir este mensaje, tienes el poder de salvar mi vida.</p>
-        
-        <h3>1. Considera la donación de un donante vivo</h3>
-        <p>Encontrar un donante vivo compatible con mi perfil es mi mayor prioridad. Comunícate directamente para obtener más información sobre el proceso de evaluación inicial.</p>
-
-        <h3>2. Apoyo para costos médicos financieros</h3>
-        <p>Ayuda a aliviar los cuantiosos gastos relacionados con los viajes constantes a la clínica, la atención especializada posterior al trasplante y el trabajo de preparación médica.</p>
-
-        <h3>Preguntas frecuentes</h3>
-        <p><strong>¿Cuál es tu tipo de sangre?</strong> La compatibilidad del tipo de sangre ya no es una barrera gracias a los modernos programas de intercambio pareado en HCA Florida Largo.</p>
+    <div id="div-spanish-content" style="display:none; padding: 20px; max-width: 1100px; margin: 0 auto;">
         </div>
 
     <script>
         function toggleLanguage() {
             var eng = document.getElementById("english-content");
             var spa = document.getElementById("div-spanish-content");
-            if (eng.style.display === "none") {
-                eng.style.display = "block";
-                spa.style.display = "none";
-            } else {
-                eng.style.display = "none";
-                spa.style.display = "block";
-            }
+            eng.style.display = (eng.style.display === "none") ? "block" : "none";
+            spa.style.display = (spa.style.display === "none") ? "block" : "none";
         }
     </script>
 </body>
