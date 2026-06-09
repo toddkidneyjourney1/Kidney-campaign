@@ -1,372 +1,88 @@
-/* ===================================================
-   1. CORE DOCUMENT & LAYOUT STANDARDS
+/* =================================================== 
+   1. CORE DOCUMENT & LAYOUT STANDARDS 
    =================================================== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; background-color: #222831; color: #eeeeee; padding: 0; }
+main { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #222831;
-    color: #eeeeee;
-    padding: 0;
-}
-
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* ===================================================
-   2. HEADER & PROFILE ELEMENTS
+/* =================================================== 
+   2. HEADER & PROFILE ELEMENTS 
    =================================================== */
-header {
-    background-color: #393e46;
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 4px solid #00adb5;
-}
+header { background-color: #393e46; padding: 40px 20px; text-align: center; border-bottom: 4px solid #00adb5; }
+.header-content { max-width: 800px; margin: 0 auto; }
+.profile-img { border-radius: 50%; border: 4px solid #00adb5; margin-bottom: 20px; object-fit: cover; }
+h1 { color: #00adb5; margin-bottom: 15px; font-size: 2.5rem; }
+.tagline { font-size: 1.1rem; color: #eeeeee; }
 
-.header-content {
-    max-width: 800px;
-    margin: 0 auto;
+/* =================================================== 
+   3. BANNER OPTIMIZATION 
+   =================================================== */
+.banner-wrapper { 
+    width: 100%; 
+    margin: 2rem 0; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    aspect-ratio: 16 / 5; 
 }
-
-.profile-img {
-    border-radius: 50%;
-    border: 4px solid #00adb5;
-    margin-bottom: 20px;
-    object-fit: cover;
-}
-
-h1 {
-    color: #00adb5;
-    margin-bottom: 15px;
-    font-size: 2.5rem;
-}
-
-.tagline {
-    font-size: 1.1rem;
-    color: #eeeeee;
+.banner-wrapper img.banner { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+    display: block; 
 }
 
 /* =================================================== 
-   3. BANNER RESPONSIVE OPTIMIZATION
+   4. LAYOUT GRID & CARDS 
    =================================================== */
-.banner-wrapper {
-    width: 100%;
-    margin: 2rem 0 3rem 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    overflow: hidden;
-    /* Aspect ratio ensures the container keeps its shape across screen sizes */
-    aspect-ratio: 16 / 5; 
-}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 20px 0 40px 0; }
+.card { background-color: #393e46; border-radius: 8px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
+.card:hover { transform: translateY(-2px); }
+h2 { color: #00adb5; margin-bottom: 15px; font-size: 1.5rem; }
+p { margin-bottom: 20px; }
 
-.banner-wrapper img.banner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 33%;
-    display: block;
-}
-
-/* Mobile Optimization */
-@media (max-width: 600px) {
-    .banner-wrapper {
-        /* Adjusting aspect ratio for narrower screens to keep more of the image visible */
-        aspect-ratio: 16 / 7; 
-        margin: 1rem 0;
-    }
-}
-/* ===================================================
-   4. LAYOUT GRID & DYNAMIC ACTION CARDS
+/* =================================================== 
+   5. BUTTONS 
    =================================================== */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 20px 0 40px 0;
-}
+.btn { display: block; width: 100%; text-align: center; padding: 14px 20px; border-radius: 6px; font-weight: bold; text-decoration: none; cursor: pointer; border: none; font-size: 1rem; transition: background-color 0.2s ease; }
+.btn:hover { opacity: 0.9; }
+.btn-green { background-color: #00adb5; color: #ffffff; }
+.btn-blue { background-color: #2d4059; color: #ffffff; }
 
-.card {
-    background-color: #393e46;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-2px);
-}
-
-h2 {
-    color: #00adb5;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-p {
-    margin-bottom: 20px;
-}
-
-/* ===================================================
-   5. GLOBAL BUTTON STYLING FRAMEWORK
+/* =================================================== 
+   6. PROGRESS BAR 
    =================================================== */
-.btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-    transition: background-color 0.2s ease, opacity 0.2s ease;
-}
+.progress-container { margin: 25px 0; }
+.progress-header { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 8px; font-weight: bold; }
+.progress-bar { background-color: #222831; border-radius: 10px; height: 24px; width: 100%; overflow: hidden; border: 1px solid #444; }
+.progress-fill { background: linear-gradient(90deg, #00adb5, #00fff2); height: 100%; width: 0%; transition: width 1s ease; }
 
-.btn:hover {
-    opacity: 0.9;
-}
-
-.btn-green {
-    background-color: #00adb5;
-    color: #ffffff;
-}
-
-.btn-blue {
-    background-color: #2d4059;
-    color: #ffffff;
-}
-
-/* ===================================================
-   6. GOFUNDME LIVE PROGRESS BAR ANIMATIONS
+/* =================================================== 
+   7. SECTIONS & FAQ 
    =================================================== */
-.progress-container {
-    margin: 25px 0;
-}
+.story-section, .faq-section { background-color: #393e46; padding: 30px; border-radius: 8px; margin-bottom: 40px; }
+ul { list-style-position: inside; margin-bottom: 20px; }
+details { background-color: #222831; padding: 15px; border-radius: 6px; margin-top: 10px; cursor: pointer; }
 
-.progress-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.progress-bar {
-    background-color: #222831;
-    border-radius: 10px;
-    height: 24px;
-    width: 100%;
-    overflow: hidden;
-    border: 1px solid #444;
-}
-
-.progress-fill {
-    background: linear-gradient(90deg, #00adb5, #00fff2);
-    height: 100%;
-    width: 0%; 
-    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ===================================================
-   7. STRUCTURAL CONTENT SECTIONS (THE CHALLENGE, FAQ)
+/* =================================================== 
+   8. SHARE BOX & TOASTS 
    =================================================== */
-.story-section, .faq-section {
-    background-color: #393e46;
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
+.share-box { background-color: #222831; border: 2px dashed #00adb5; padding: 25px; border-radius: 8px; margin-top: 30px; text-align: center; }
+.toast { visibility: hidden; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #00adb5; padding: 16px; border-radius: 6px; }
 
-ul {
-    list-style-position: inside;
-    margin-bottom: 20px;
-}
-
-li {
-    margin-bottom: 15px;
-}
-
-details {
-    background-color: #222831;
-    padding: 15px;
-    border-radius: 6px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-details summary {
-    outline: none;
-}
-
-details p {
-    margin-top: 10px;
-    margin-bottom: 0;
-    cursor: default;
-}
-
-/* ===================================================
-   8. STRATEGIC SHARE CONTROLLERS & TOASTS
+/* =================================================== 
+   9. TIMELINE 
    =================================================== */
-.share-box {
-    background-color: #222831;
-    border: 2px dashed #00adb5;
-    padding: 25px;
-    border-radius: 8px;
-    margin-top: 30px;
-    text-align: center;
-}
+.timeline-container { position: relative; margin-top: 20px; padding-left: 20px; }
+.timeline-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px; }
 
-.share-box .btn {
-    display: inline-block;
-    width: auto;
-    margin: 10px 5px 0 5px;
-}
-
-.toast {
-    visibility: hidden;
-    min-width: 280px;
-    background-color: #00adb5;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 16px;
-    position: fixed;
-    z-index: 999;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.toast.show {
-    visibility: visible;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-/* ===================================================
-   9. ORIGINAL TRACK TIMELINE SYSTEM (RESTORED)
+/* =================================================== 
+   10. MOBILE RESPONSIVENESS 
    =================================================== */
-.timeline-container {
-    position: relative;
-    margin-top: 20px;
-    padding-left: 20px;
-}
-
-.ekg-line {
-    position: absolute;
-    left: 31px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #222831;
-    z-index: 1;
-}
-
-.timeline-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
-}
-
-.timeline-item:last-child {
-    margin-bottom: 0;
-}
-
-.timeline-icon {
-    background-color: #393e46;
-    border: 2px solid #222831;
-    border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    flex-shrink: 0;
-}
-
-.timeline-item.current .timeline-icon {
-    border-color: #00adb5;
-    background-color: #00adb5;
-    box-shadow: 0 0 8px #00adb5;
-}
-
-.timeline-item h3 {
-    font-size: 1.1rem;
-    color: #eeeeee;
-    margin-bottom: 2px;
-}
-
-.timeline-item.current h3 {
-    color: #00adb5;
-}
-
-.timeline-item p {
-    margin: 0;
-    color: #ccc;
-    font-size: 0.95rem;
-}
-
-/* ===================================================
-   10. KEYFRAME MECHANICS & RESPONSIVE DESIGN
-   =================================================== */
-@keyframes fadein {
-    from { bottom: 0; opacity: 0; }
-    to { bottom: 30px; opacity: 1; }
-}
-
-@keyframes fadeout {
-    from { bottom: 30px; opacity: 1; }
-    to { bottom: 0; opacity: 0; }
-}
-
 @media (max-width: 600px) {
     h1 { font-size: 1.8rem; }
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
-    .banner-wrapper, .banner-wrapper img.banner { height: 160px; max-height: 160px; }
-    .ekg-line { left: 31px; }
-}
-/* Banner Optimization */
-.banner-wrapper {
-    width: 100%;
-    margin: 2rem 0;
-    border-radius: 8px;
-    overflow: hidden;
-    /* This creates a fixed aspect ratio for the banner container */
-    aspect-ratio: 16 / 5; 
-}
-
-.banner-wrapper img.banner {
-    width: 100%;
-    height: 100%;
-    /* 'cover' ensures the image fills the space without distortion */
-    object-fit: cover; 
-    object-position: center;
-    display: block;
-}
-
-/* Mobile Adjustment */
-@media (max-width: 600px) {
-    .banner-wrapper {
-        /* Makes the banner slightly taller on mobile to keep the focus */
-        aspect-ratio: 16 / 7; 
-    }
+    /* Updated Mobile Banner Ratio */
+    .banner-wrapper { aspect-ratio: 16 / 7; }
 }
