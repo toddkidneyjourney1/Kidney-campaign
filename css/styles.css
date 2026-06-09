@@ -344,3 +344,29 @@ details p {
     .banner-wrapper, .banner-wrapper img.banner { height: 160px; max-height: 160px; }
     .ekg-line { left: 31px; }
 }
+/* Banner Optimization */
+.banner-wrapper {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    /* This creates a fixed aspect ratio for the banner container */
+    aspect-ratio: 16 / 5; 
+}
+
+.banner-wrapper img.banner {
+    width: 100%;
+    height: 100%;
+    /* 'cover' ensures the image fills the space without distortion */
+    object-fit: cover; 
+    object-position: center;
+    display: block;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 600px) {
+    .banner-wrapper {
+        /* Makes the banner slightly taller on mobile to keep the focus */
+        aspect-ratio: 16 / 7; 
+    }
+}
