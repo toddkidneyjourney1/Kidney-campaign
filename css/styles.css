@@ -87,4 +87,4 @@ details { background-color: #222831; padding: 15px; border-radius: 6px; margin-t
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
     /* Updated Mobile Banner Ratio */
     .banner-wrapper { aspect-ratio: 16 / 7; }
-}
+.banner-wrapper { height: 140px; }
