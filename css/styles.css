@@ -28,8 +28,8 @@ h1 { color: #00adb5; margin-bottom: 15px; font-size: 2.5rem; }
 }
 .banner-wrapper img.banner { 
     width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+    height: auto; 
+    object-fit: contain; 
     object-position: center; 
     display: block;
 }
