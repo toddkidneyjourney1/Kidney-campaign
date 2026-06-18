@@ -84,16 +84,19 @@ details { background-color: #222831; padding: 15px; border-radius: 6px; margin-t
 /* =================================================== 
    10. MOBILE RESPONSIVENESS 
    =================================================== */
+/* =================================================== 10. MOBILE RESPONSIVENESS =================================================== */
 @media (max-width: 600px) {
-    /* ... other styles ... */
-    
-    .banner-wrapper {
-        aspect-ratio: 16 / 7; 
-        height: auto; /* Change this from 140px to auto */
-    }
-}@media (max-width: 600px) {
     h1 { font-size: 1.8rem; }
-    .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
-    /* Updated Mobile Banner Ratio */
-    .banner-wrapper { aspect-ratio: 16 / 7; }
-.banner-wrapper { height: 140px; }
+    
+    .share-box .btn { 
+        display: block; 
+        width: 100%; 
+        margin: 10px 0 0 0; 
+    }
+
+    /* This forces the banner to stay in proportion and NOT be cut off */
+    .banner-wrapper { 
+        aspect-ratio: 16 / 7; 
+        height: auto; 
+    }
+}
