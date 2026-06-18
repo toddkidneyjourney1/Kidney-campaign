@@ -30,8 +30,8 @@ h1 { color: #00adb5; margin-bottom: 15px; font-size: 2.5rem; }
 
 .banner-wrapper img.banner {
     width: 100%;
-    height: 100%; /* Change this to 100% so it fills the wrapper */
-    object-fit: cover; /* Use 'cover' to ensure it fills the space nicely */
+    height: 100%;
+    object-fit: contain; /* Change this from 'cover' to 'contain' */
     object-position: center;
     display: block;
 }
@@ -85,6 +85,13 @@ details { background-color: #222831; padding: 15px; border-radius: 6px; margin-t
    10. MOBILE RESPONSIVENESS 
    =================================================== */
 @media (max-width: 600px) {
+    /* ... other styles ... */
+    
+    .banner-wrapper {
+        aspect-ratio: 16 / 7; 
+        height: auto; /* Change this from 140px to auto */
+    }
+}@media (max-width: 600px) {
     h1 { font-size: 1.8rem; }
     .share-box .btn { display: block; width: 100%; margin: 10px 0 0 0; }
     /* Updated Mobile Banner Ratio */
