@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Todd Lyman is seeking a living kidney donor and financial support for his transplant journey. Help save a life.">
-    <meta name="keywords" content="kidney donation, kidney transplant, living donor, medical fundraiser">
-    <meta property="og:title" content="WANTED: A KIDNEY | A New Chapter">
-    <meta property="og:description" content="Todd Lyman is seeking a living kidney donor. Join the mission to save a life.">
-    <meta property="og:image" content="/images/banner.jpg">
+    <meta name="description" content="Todd Lyman is seeking a living kidney donor and financial support for his transplant journey. One person can change everything — help save a life today.">
+    <meta name="keywords" content="kidney donation, kidney transplant, living donor, medical fundraiser, Todd Lyman, HCA Florida Largo">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Help Todd Find a Kidney | A New Chapter">
+    <meta property="og:description" content="Todd Lyman needs a living kidney donor. One person can change everything. Learn how you can help save a life.">
+    <meta property="og:image" content="https://toddkidneyjourney1.github.io/Kidney-campaign/images/banner.jpg">
     <meta property="og:url" content="https://toddkidneyjourney1.github.io/Kidney-campaign/">
-    <title>WANTED: A KIDNEY | A New Chapter</title>
+    <meta property="og:site_name" content="Todd's Kidney Journey">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Help Todd Find a Kidney | A New Chapter">
+    <meta name="twitter:description" content="Todd Lyman needs a living kidney donor. One person can change everything.">
+    <meta name="twitter:image" content="https://toddkidneyjourney1.github.io/Kidney-campaign/images/banner.jpg">
+
+    <title>Help Todd Find a Kidney | A New Chapter</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫀</text></svg>">
+
+    <!-- Preload the hero profile image for faster first paint -->
+    <link rel="preload" as="image" href="images/profile.jpg">
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B8HDE9NGYF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -21,250 +37,492 @@
     </script>
 </head>
 <body>
-    
 
-    <header role="banner">
-        <div class="header-content">
-            <img src="images/profile.jpg" alt="Todd Lyman - Seeking kidney donor" class="profile-img" width="150" height="150" loading="lazy">
-            <h1>WANTED! A KIDNEY: A New Chapter</h1>
-            <p class="tagline">
-                <em>My journey through the arts—including my time with <a href="https://www.laboratorytheaterflorida.com/" target="_blank" rel="noopener noreferrer" style="color: #00adb5; text-decoration: underline;">The Laboratory Theater of Florida</a>—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: <strong>I need a life-saving kidney transplant to continue living the life I love</strong>. Whether you can donate, contribute financially, or simply share this message, you have the power to save my life.</em>
-            </p>
-        </div>
-    </header>
+    <!-- Skip to main content for keyboard/screen-reader users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <main id="main">
-        <section class="grid">
-            <div class="card">
-                <div>
-                    <h2>1. Consider Living Donation</h2>
-                    <p>Finding a living donor matching my profile is my highest priority. Reach out directly to learn more about the initial screening process. Living donors have excellent outcomes and can transform my future.</p>
-                </div>
-                <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer" class="btn btn-green" aria-label="How to test if you're a kidney match for Todd">How to Test if You're a Match</a>
-            </div>
+    <!-- ========== STICKY NAVIGATION ========== -->
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-brand" aria-label="Go to top — Todd's Kidney Journey">
+                <span aria-hidden="true">🫀</span> Todd's Journey
+            </a>
 
-            <div class="card">
-                <div>
-                    <h2>2. Support Financial Medical Costs</h2>
-                    <p>Help alleviate the heavy expenses linked to ongoing clinic travel, specialized post-transplant care, and medical prep work. Every contribution makes a direct impact on my recovery.</p>
-                    <div class="progress-container">
-                        <div class="progress-header">
-                            <span>Campaign Status</span>
-                            <span aria-live="polite" aria-atomic="true"><span id="raised-amount">$225</span> / $5,000 raised</span>
-                        </div>
-                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Fundraising progress: 0 of 5000 dollars raised">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://gofund.me/57ee0176d" target="_blank" rel="noopener noreferrer" class="btn btn-blue" aria-label="Donate to Todd's kidney journey on GoFundMe">Donate on GoFundMe</a>
-            </div>
-        </section>
+            <button class="nav-toggle" id="nav-toggle"
+                    aria-expanded="false"
+                    aria-controls="nav-menu"
+                    aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
 
-<div class="banner-wrapper">
-    <img src="images/banner.jpg" alt="Kidney campaign banner" class="banner">
-</div>
-        <section class="story-section">
-            <h2>The Challenge</h2>
-            <ul>
-                <li>
-                    <strong>Living Kidney Donor:</strong> I am actively searching for a potential living donor. This is the fastest path to my transplant and offers excellent long-term outcomes.
-                    <details>
-                        <summary><strong>General Kidney Donation Baseline</strong></summary>
-                        <p>Donors generally need to be in good physical and mental health and free from major chronic medical conditions like diabetes, high blood pressure, or heart disease. You do not have to be a direct blood match to help—compatibility is determined through testing. The screening process typically takes 4-8 weeks and includes blood work, imaging, and psychological evaluation. Most donors return to normal activities within 4-6 weeks after surgery.</p>
-                        <p style="margin-top: 15px;">
-                            <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer" class="btn btn-green" style="font-size: 0.9em; padding: 8px 16px; text-decoration: none; display: inline-block;"> 📋 Begin HCA Screening Portal </a>
-                        </p>
-                    </details>
-                </li>
-                <li>
-                    <strong>Financial Assistance:</strong> Any contribution will directly support medical travel, transplant preparation, and post-surgery recovery costs. Funds help cover travel to appointments, medications, and specialized care.
-                    <details>
-                        <summary><strong>Why Financial Support Matters</strong></summary>
-                        <p>Transplant patients face significant expenses: clinic visits require 2-3 trips per week initially, medications cost $1,500-3,000 monthly, and post-transplant care is intensive. Your donations help ensure I can afford treatment without financial stress, which directly impacts my health outcomes.</p>
-                        <p style="margin-top: 15px;">
-                            <a href="https://gofund.me/57ee0176d" target="_blank" rel="noopener noreferrer" class="btn btn-blue" style="font-size: 0.9em; padding: 8px 16px; text-decoration: none; display: inline-block;"> 💳 Go to GoFundMe Campaign </a>
-                        </p>
-                    </details>
-                </li>
-                <li>
-                    <strong>Spread the Word:</strong> Sharing this campaign exponentially increases the chances of finding a compatible donor. Social media shares and word-of-mouth have powerful effects.
+            <ul class="nav-menu" id="nav-menu" role="list">
+                <li role="listitem"><a href="#hero"    class="nav-link">Home</a></li>
+                <li role="listitem"><a href="#story"   class="nav-link">My Story</a></li>
+                <li role="listitem"><a href="#help"    class="nav-link">How to Help</a></li>
+                <li role="listitem"><a href="#faq"     class="nav-link">FAQ</a></li>
+                <li role="listitem">
+                    <a href="https://gofund.me/57ee0176d"
+                       target="_blank" rel="noopener noreferrer"
+                       class="nav-cta">Donate Now</a>
                 </li>
             </ul>
+        </div>
+    </nav>
 
-          <div class="share-box">
-    <h3>Can't donate or give financially? You can still help save a life.</h3>
-    <p>Please share this page on your social media. One share could connect me with my lifesaving donor.</p>
-    
-    <div class="share-buttons">
-        <button id="share-btn" class="btn btn-blue">📋 Copy Link</button>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toddkidneyjourney1.github.io/Kidney-campaign/" target="_blank" class="btn btn-blue" style="background-color: #4267B2;">Share on Facebook</a>
-        <a href="https://twitter.com/intent/tweet?url=https://toddkidneyjourney1.github.io/Kidney-campaign/&text=Please help me find a kidney donor!" target="_blank" class="btn btn-blue" style="background-color: #1DA1F2;">Share on X/Twitter</a>
-    </div>
-    <div id="toast-notification" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-</div>
+    <main id="main-content">
 
-        <section class="fact-section" style="text-align: center; margin: 2rem auto; max-width: 800px; padding: 0 20px;">
-            <button id="fact-btn" class="btn btn-blue" aria-label="Show a random kidney fact">
-                💡 Show a Fun Kidney Fact
-            </button>
-            <p id="fact-display" style="margin-top: 15px; font-style: italic; min-height: 1.5em; color: #fff; font-size: 1.1em;"></p>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="hero" aria-labelledby="hero-heading">
+            <div class="hero-inner">
+                <div class="hero-badge" aria-label="Urgent need">⚡ Urgent — Every Day Matters</div>
+
+                <h1 id="hero-heading" class="hero-title">
+                    One Person Can<br><span class="highlight">Change Everything</span>
+                </h1>
+
+                <div class="hero-profile">
+                    <img src="images/profile.jpg"
+                         alt="Todd Lyman, theater artist and kidney transplant candidate, smiling with hope"
+                         class="hero-profile-img"
+                         width="160" height="160"
+                         fetchpriority="high">
+                </div>
+
+                <p class="hero-subtitle">
+                    I'm <strong>Todd Lyman</strong> — a storyteller, theater artist, and someone's future transplant success story.
+                    I need a <strong>life-saving kidney transplant</strong>, and the single most powerful thing that can make it happen is <em>you</em>.
+                </p>
+
+                <p class="hero-sub-subtitle">
+                    My journey through the arts — including my time with
+                    <a href="https://www.laboratorytheaterflorida.com/" target="_blank" rel="noopener noreferrer">The Laboratory Theater of Florida</a>
+                    — has always been about finding light in the unexpected. Today is no different.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="http://www.largomedical.com/signmeup"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-primary btn-lg"
+                       aria-label="Test if you are a kidney match for Todd at HCA Florida Largo">
+                        🩺 Test if You're a Match
+                    </a>
+                    <a href="https://gofund.me/57ee0176d"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-secondary btn-lg"
+                       aria-label="Donate to Todd's kidney campaign on GoFundMe">
+                        💛 Donate on GoFundMe
+                    </a>
+                </div>
+
+                <div class="hero-social-proof">
+                    <span>📣 Share this page:</span>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toddkidneyjourney1.github.io/Kidney-campaign/"
+                       target="_blank" rel="noopener noreferrer"
+                       class="social-link" aria-label="Share on Facebook">Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://toddkidneyjourney1.github.io/Kidney-campaign/&text=Please+help+Todd+find+a+kidney+donor!"
+                       target="_blank" rel="noopener noreferrer"
+                       class="social-link" aria-label="Share on X/Twitter">X / Twitter</a>
+                    <button id="share-btn" class="social-link social-link-btn" aria-label="Copy campaign link to clipboard">
+                        Copy Link
+                    </button>
+                </div>
+            </div>
+
+            <!-- Decorative wave transition to next section -->
+            <div class="hero-wave" aria-hidden="true">
+                <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#1a1f2e"/>
+                </svg>
+            </div>
         </section>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>What blood type are you?</strong></summary>
-                    <p>Blood type compatibility is no longer a barrier thanks to modern paired-exchange programs at HCA Florida Largo.</p>
-                </details>
-                <hr style="margin: 5px 0 0 0; border: 0; border-top: 1px solid #444;">
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>What is the difference between living and deceased donation?</strong></summary>
-                    <p>A living donor can often provide a kidney that lasts longer and functions immediately. Deceased donation is an option, but the waitlist can be many years long, making living donation the most effective way to help.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>Will I have to pay for the medical expenses of testing or donating?</strong></summary>
-                    <p>No. All medical expenses for a living donor's evaluation, surgery, and follow-up care are covered by the recipient’s insurance or the transplant center.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>What are the long-term health risks for a donor?</strong></summary>
-                    <p>Living donors are screened extensively to ensure they are healthy enough to donate. Most donors live normal, healthy lives with one kidney, as the remaining kidney increases its capacity to filter blood effectively.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>How do I start the process if I am interested in testing?</strong></summary>
-                    <p>You can contact the HCA Florida Largo transplant coordinator directly by <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer" style="color: #00adb5; text-decoration: underline;">visiting the HCA screening portal</a>. The process is confidential and you can stop at any time without any pressure or obligation.</p>
-                </details>
-            </div>
-        </section>
+        <!-- ========== BANNER IMAGE ========== -->
+        <div class="banner-wrapper">
+            <!-- Decorative banner; alt="" because it adds no informational content -->
+            <img src="images/banner.jpg"
+                 alt=""
+                 class="banner"
+                 loading="lazy"
+                 decoding="async"
+                 width="1200" height="400">
+        </div>
 
-        <section class="timeline-section" style="background-color: #393e46; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
-            <div class="timeline-card">
-                <h2 style="color: #00adb5; margin-bottom: 25px; font-size: 1.5rem;">My Journey</h2>
-                <div class="timeline-container" style="position: relative; padding-left: 35px; border-left: 3px solid #222831; margin-left: 10px;">
-                    
-                    <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">🩸</span>
-                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Dialysis Treatment</h3>
-                        <p style="margin: 0; color: #ccc;">Managing kidney function through regular treatments while waiting for my match.</p>
+        <!-- ========== IMPACT STATS ========== -->
+        <section class="stats-section" aria-labelledby="stats-heading">
+            <div class="section-inner">
+                <h2 id="stats-heading" class="section-title">The Reality of Kidney Disease</h2>
+                <p class="section-subtitle">These numbers represent real lives. Todd is one of them.</p>
+                <div class="stats-grid">
+                    <div class="stat-card" data-animate="fade-up">
+                        <div class="stat-number" data-target="105000" data-suffix="+">0</div>
+                        <div class="stat-label">Americans waiting for a kidney right now</div>
                     </div>
-
-                    <div class="timeline-item current" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #00adb5; border-radius: 50%; font-size: 1.2rem; padding: 2px; box-shadow: 0 0 8px #00adb5;">🔍</span>
-                        <h3 style="font-size: 1.1rem; color: #00adb5; margin-bottom: 5px; font-weight: bold;">Seeking Living Donor (NOW)</h3>
-                        <p style="margin: 0; color: #eee;">Active search phase. If you or someone you know might be a match, please reach out.</p>
+                    <div class="stat-card" data-animate="fade-up">
+                        <div class="stat-number" data-target="17" data-suffix="/day">0</div>
+                        <div class="stat-label">People die each day waiting for an organ</div>
                     </div>
-
-                    <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">⚕️</span>
-                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Pre-Transplant Prep</h3>
-                        <p style="margin: 0; color: #ccc;">Final clearances and coordination with HCA Florida Largo.</p>
+                    <div class="stat-card" data-animate="fade-up">
+                        <div class="stat-number" data-prefix="~" data-target="5" data-suffix=" yrs">0</div>
+                        <div class="stat-label">Average wait for a deceased-donor kidney</div>
                     </div>
-
-                    <div class="timeline-item" style="position: relative;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">✨</span>
-                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Transplant & Recovery</h3>
-                        <p style="margin: 0; color: #ccc;">The beginning of my new chapter with restored health.</p>
+                    <div class="stat-card" data-animate="fade-up">
+                        <div class="stat-number" data-target="5" data-suffix=" min">0</div>
+                        <div class="stat-label">Time it takes to begin donor screening</div>
                     </div>
-                    
                 </div>
             </div>
         </section>
 
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="#top" class="btn btn-blue" style="text-decoration: none; padding: 10px 20px; display: inline-block; width: auto;">🏠 Go Back to Top</a>
-     </div
-       
-        <footer role="contentinfo" style="margin-top: 40px; padding: 20px; text-align: center; border-top: 1px solid #ccc;">
-            <p>&copy; 2026 Todd Lyman Kidney Journey. All rights reserved.</p>
-            <p><small>Medical information provided for educational purposes. Please consult with healthcare professionals regarding kidney donation.</small></p>
-        </footer>
+        <!-- ========== STORY / CHALLENGE SECTION ========== -->
+        <section class="story-section" id="story" aria-labelledby="story-heading">
+            <div class="section-inner">
+                <h2 id="story-heading" class="section-title">The Challenge I'm Facing</h2>
+                <p class="section-subtitle">Living with kidney failure is a daily battle. Here's what's at stake — and how you can help.</p>
+
+                <div class="story-grid">
+                    <!-- Card 1: Living Donation -->
+                    <div class="story-card" data-animate="fade-up">
+                        <div class="story-icon" aria-hidden="true">🩺</div>
+                        <h3>Living Kidney Donor</h3>
+                        <p>Finding a living donor is my highest priority — the fastest path to transplant with the best long-term outcomes. You don't need to be a blood relative.</p>
+                        <details class="story-details">
+                            <summary>What does donation involve?</summary>
+                            <div class="details-content">
+                                <p>Donors need to be in good physical and mental health, free from major chronic conditions. Blood type is no longer a hard barrier — compatibility is determined through testing. Screening takes 4–8 weeks and is fully confidential. Most donors return to normal activities within 4–6 weeks.</p>
+                                <a href="http://www.largomedical.com/signmeup"
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="btn btn-primary" style="margin-top: 1rem;">
+                                    📋 Begin HCA Screening Portal
+                                </a>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Card 2: Financial Assistance -->
+                    <div class="story-card" data-animate="fade-up">
+                        <div class="story-icon" aria-hidden="true">💛</div>
+                        <h3>Financial Assistance</h3>
+                        <p>Transplant patients face significant expenses — clinic visits 2–3×/week, $1,500–$3,000/month in medications, and intensive post-transplant care. Every dollar helps.</p>
+                        <div class="progress-container" role="region" aria-label="Fundraising progress">
+                            <div class="progress-header">
+                                <span>Campaign Status</span>
+                                <span aria-live="polite" aria-atomic="true">
+                                    <strong id="raised-amount">$225</strong> / $5,000 raised
+                                </span>
+                            </div>
+                            <div class="progress-bar"
+                                 role="progressbar"
+                                 aria-valuenow="0"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 aria-label="Fundraising progress">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                        </div>
+                        <details class="story-details">
+                            <summary>Why does financial support matter?</summary>
+                            <div class="details-content">
+                                <p>Your donations help ensure I can focus on recovery rather than financial stress, which directly impacts health outcomes. No contribution is too small.</p>
+                                <a href="https://gofund.me/57ee0176d"
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="btn btn-secondary" style="margin-top: 1rem;">
+                                    💳 Go to GoFundMe Campaign
+                                </a>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Card 3: Spread the Word -->
+                    <div class="story-card" data-animate="fade-up">
+                        <div class="story-icon" aria-hidden="true">📣</div>
+                        <h3>Spread the Word</h3>
+                        <p>Sharing this campaign exponentially increases my chances of finding a compatible donor. Social media shares and word-of-mouth have real, measurable power.</p>
+                        <div class="share-buttons">
+                            <button id="share-btn-story" class="btn btn-outline" aria-label="Copy campaign link to clipboard">
+                                📋 Copy Link
+                            </button>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toddkidneyjourney1.github.io/Kidney-campaign/"
+                               target="_blank" rel="noopener noreferrer"
+                               class="btn btn-facebook" aria-label="Share on Facebook">
+                                Share on Facebook
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=https://toddkidneyjourney1.github.io/Kidney-campaign/&text=Please+help+Todd+find+a+kidney+donor!"
+                               target="_blank" rel="noopener noreferrer"
+                               class="btn btn-twitter" aria-label="Share on X/Twitter">
+                                Share on X
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TIMELINE SECTION ========== -->
+        <section class="timeline-section" aria-labelledby="timeline-heading">
+            <div class="section-inner">
+                <h2 id="timeline-heading" class="section-title">My Journey</h2>
+                <p class="section-subtitle">From where I am today to the new chapter I'm fighting for.</p>
+
+                <ol class="timeline" aria-label="Todd's transplant journey timeline">
+                    <li class="timeline-item completed" data-animate="fade-left">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <span class="timeline-icon">🩸</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Dialysis Treatment</h3>
+                            <p>Managing kidney function through regular dialysis while waiting for my match. A demanding but necessary daily commitment.</p>
+                            <span class="timeline-status">Ongoing</span>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item active" data-animate="fade-left">
+                        <div class="timeline-marker active" aria-hidden="true">
+                            <span class="timeline-icon pulse" aria-hidden="true">🔍</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Seeking Living Donor <span class="badge-now">NOW</span></h3>
+                            <p>Active search phase. If you or someone you know might be a match, this is the most powerful moment to act. Your help matters most right here.</p>
+                            <span class="timeline-status current">You can help here</span>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item" data-animate="fade-left">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <span class="timeline-icon">⚕️</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Pre-Transplant Preparation</h3>
+                            <p>Final medical clearances and coordination with the HCA Florida Largo transplant team.</p>
+                            <span class="timeline-status">Next step</span>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item" data-animate="fade-left">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <span class="timeline-icon">✨</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Transplant &amp; Recovery</h3>
+                            <p>The beginning of my new chapter — restored health, renewed energy, and a lifetime of gratitude.</p>
+                            <span class="timeline-status">The goal</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ========== HOW TO HELP SECTION ========== -->
+        <section class="help-section" id="help" aria-labelledby="help-heading">
+            <div class="section-inner">
+                <h2 id="help-heading" class="section-title">Three Ways to Help</h2>
+                <p class="section-subtitle">No matter what you can give — your kidney, your dollars, or your voice — it matters enormously.</p>
+
+                <div class="help-grid">
+                    <!-- Path 1: Test -->
+                    <article class="help-card" data-animate="fade-up">
+                        <div class="help-card-icon" aria-hidden="true">🩺</div>
+                        <h3>Test if You're a Match</h3>
+                        <p>You could be the one. Donor screening is free, confidential, and you can stop at any time with no obligation.</p>
+                        <ul class="help-list" aria-label="Key facts about testing">
+                            <li>✓ Free — no cost to donors</li>
+                            <li>✓ Process takes 4–8 weeks</li>
+                            <li>✓ Completely confidential</li>
+                            <li>✓ No commitment to proceed</li>
+                        </ul>
+                        <a href="http://www.largomedical.com/signmeup"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn btn-primary"
+                           aria-label="Begin kidney donor screening at HCA Florida Largo">
+                            Start Screening →
+                        </a>
+                    </article>
+
+                    <!-- Path 2: Donate (featured) -->
+                    <article class="help-card help-card-featured" data-animate="fade-up">
+                        <div class="help-card-badge" aria-label="Most urgent action">Most Urgent</div>
+                        <div class="help-card-icon" aria-hidden="true">💛</div>
+                        <h3>Donate to the Campaign</h3>
+                        <p>Every dollar directly funds medical travel, medications, transplant prep, and post-surgery recovery. No amount is too small.</p>
+                        <ul class="help-list" aria-label="What your donation covers">
+                            <li>✓ Clinic travel &amp; appointments</li>
+                            <li>✓ Monthly medications ($1,500–$3,000)</li>
+                            <li>✓ Transplant preparation costs</li>
+                            <li>✓ Post-surgery recovery care</li>
+                        </ul>
+                        <a href="https://gofund.me/57ee0176d"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn btn-primary"
+                           aria-label="Donate to Todd's campaign on GoFundMe">
+                            Donate on GoFundMe →
+                        </a>
+                    </article>
+
+                    <!-- Path 3: Share -->
+                    <article class="help-card" data-animate="fade-up">
+                        <div class="help-card-icon" aria-hidden="true">📣</div>
+                        <h3>Share This Campaign</h3>
+                        <p>Your network is more powerful than you know. A single share could connect me to a life-saving donor.</p>
+                        <ul class="help-list" aria-label="Why sharing matters">
+                            <li>✓ Costs nothing</li>
+                            <li>✓ Takes under 1 minute</li>
+                            <li>✓ Could directly save a life</li>
+                            <li>✓ Reaches people you'd never expect</li>
+                        </ul>
+                        <button id="share-btn-help" class="btn btn-primary" aria-label="Copy campaign link to clipboard">
+                            Copy &amp; Share Link →
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== KIDNEY FACTS ========== -->
+        <section class="facts-section" aria-labelledby="facts-heading">
+            <div class="section-inner facts-inner">
+                <h2 id="facts-heading" class="section-title">Did You Know?</h2>
+                <p class="section-subtitle">Kidney donation facts that might surprise you.</p>
+                <button id="fact-btn" class="btn btn-outline btn-lg" aria-label="Reveal a random kidney fact">
+                    💡 Show a Kidney Fact
+                </button>
+                <div id="fact-display" class="fact-display" role="status" aria-live="polite" aria-atomic="true"></div>
+            </div>
+        </section>
+
+        <!-- ========== TESTIMONIALS / SUPPORT MESSAGES ========== -->
+        <section class="testimonials-section" aria-labelledby="testimonials-heading">
+            <div class="section-inner">
+                <h2 id="testimonials-heading" class="section-title">Words of Support</h2>
+                <p class="section-subtitle">Messages from people who believe in Todd's journey.</p>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card" data-animate="fade-up">
+                        <p>Todd's spirit is unbreakable. His positivity and determination inspire everyone around him. We're rooting for you every single day.</p>
+                        <footer>— A fellow artist &amp; friend</footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" data-animate="fade-up">
+                        <p>I had no idea how straightforward the donor screening process was. If you're on the fence, just take the first step. It could be the most meaningful thing you ever do.</p>
+                        <footer>— Someone who began screening</footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" data-animate="fade-up">
+                        <p>Living kidney donors have the same life expectancy as the general population. The science is clear: you can save a life without sacrificing your own health.</p>
+                        <footer>— Transplant medicine research</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAQ SECTION ========== -->
+        <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+            <div class="section-inner">
+                <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about kidney donation.</p>
+
+                <div class="faq-list">
+
+                    <div class="faq-item" data-animate="fade-up">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
+                            What blood type are you?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-1" hidden>
+                            <p>Blood type compatibility is no longer a barrier thanks to modern paired-exchange programs at HCA Florida Largo. Many donors with different blood types can participate through innovative matching systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
+                            What's the difference between living and deceased donation?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-2" hidden>
+                            <p>A living donor can provide a kidney that often lasts longer and functions immediately. The waitlist for a deceased-donor kidney can be 3–5 years or more, making living donation the most effective and timely path to saving my life.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
+                            Will I pay for the medical expenses of testing or donating?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-3" hidden>
+                            <p>No. All medical expenses for a living donor's evaluation, surgery, and follow-up care are covered by the recipient's insurance or the transplant center. Donors do not pay out-of-pocket for medical costs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
+                            What are the long-term health risks for a donor?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-4" hidden>
+                            <p>Living donors are screened extensively to ensure they are healthy enough to donate. Studies show that kidney donors have the same life expectancy as the general population. The remaining kidney increases its capacity to filter blood effectively, maintaining normal function.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
+                            How do I start the screening process?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-5" hidden>
+                            <p>Visit the <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer">HCA Florida Largo screening portal</a>. The process is completely confidential and you can stop at any time without pressure or obligation.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PERSISTENT CTA STRIP ========== -->
+        <section class="cta-strip" aria-labelledby="cta-strip-heading">
+            <div class="section-inner cta-strip-inner">
+                <div class="cta-strip-text">
+                    <h2 id="cta-strip-heading">Every day on dialysis is a day without the life I love.</h2>
+                    <p>Help me find a kidney or support my recovery journey.</p>
+                </div>
+                <div class="cta-strip-buttons">
+                    <a href="http://www.largomedical.com/signmeup"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-primary"
+                       aria-label="Test if you are a kidney match for Todd">
+                        🩺 Test if You're a Match
+                    </a>
+                    <a href="https://gofund.me/57ee0176d"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-secondary"
+                       aria-label="Donate to Todd's campaign on GoFundMe">
+                        💛 Donate Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // ===================================================
-            // 1. GOFUNDME COUNTER CONFIGURATION
-            // ===================================================
-            const currentRaised = 175; 
-            const fundingGoal = 5000;
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span aria-hidden="true">🫀</span>
+                <span>Todd's Kidney Journey</span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Todd Lyman Kidney Journey. All rights reserved.</p>
+            <p class="footer-disclaimer">
+                <small>Medical information provided for educational purposes. Please consult with healthcare professionals regarding kidney donation.</small>
+            </p>
+            <nav class="footer-links" aria-label="Footer links">
+                <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer">HCA Florida Largo</a>
+                <a href="https://gofund.me/57ee0176d" target="_blank" rel="noopener noreferrer">GoFundMe Campaign</a>
+                <a href="https://www.laboratorytheaterflorida.com/" target="_blank" rel="noopener noreferrer">Laboratory Theater of Florida</a>
+            </nav>
+        </div>
+    </footer>
 
-            const raisedAmountEl = document.getElementById('raised-amount');
-            const progressFillEl = document.getElementById('progress-fill');
-            const progressBarContainer = document.querySelector('.progress-bar');
+    <!-- Toast notification (aria-live region for screen readers) -->
+    <div id="toast-notification" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-            if (raisedAmountEl && progressFillEl) {
-                raisedAmountEl.textContent = new Intl.NumberFormat('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    maximumFractionDigits: 0
-                }).format(currentRaised);
-
-                const percentage = Math.min((currentRaised / fundingGoal) * 100, 100);
-                progressFillEl.style.width = `${percentage}%`;
-
-                if (progressBarContainer) {
-                    progressBarContainer.setAttribute('aria-valuenow', Math.round(percentage));
-                    progressBarContainer.setAttribute('aria-label', `Fundraising progress: ${currentRaised} of ${fundingGoal} dollars raised`);
-                }
-            }
-
-            // ===================================================
-            // 2. RANDOM KIDNEY FACTS CONTROLLER
-            // ===================================================
-            const kidneyFacts = [
-                "Your kidneys filter about 200 quarts of fluid every day, clearing out waste and keeping your body chemistry in balance.",
-                "Even though they make up only about 0.5% of your body weight, your kidneys receive about 20-25% of the heart's total blood output.",
-                "A single kidney is fully capable of doing the work of two! That’s why living donors can live perfectly healthy, normal lives.",
-                "Kidneys are shaped like beans, and each one is roughly the size of a large fist or a computer mouse.",
-                "Each kidney contains about 1 million tiny filtering units called nephrons. If you stretched them all out end-to-end, they would span over 40 miles!"
-            ];
-
-            const factBtn = document.getElementById('fact-btn');
-            const factDisplay = document.getElementById('fact-display');
-            
-            if (factBtn && factDisplay) {
-                factBtn.addEventListener('click', () => {
-                    const randomIndex = Math.floor(Math.random() * kidneyFacts.length);
-                    factDisplay.textContent = kidneyFacts[randomIndex];
-                });
-            }
-
-            // ===================================================
-            // 3. SHARE CAMPAIGN BUTTON CONTROLLER
-            // ===================================================
-            const shareBtn = document.getElementById('share-btn');
-            const toast = document.getElementById('toast-notification');
-
-            if (shareBtn) {
-                shareBtn.addEventListener('click', () => {
-                    const siteUrl = window.location.href;
-                    
-                    navigator.clipboard.writeText(siteUrl).then(() => {
-                        if (toast) {
-                            toast.textContent = "📋 Campaign link copied to clipboard!";
-                            toast.classList.add('show');
-                            setTimeout(() => {
-                                toast.classList.remove('show');
-                            }, 3000);
-                        } else {
-                            alert("Link copied to clipboard!");
-                        }
-                    }).catch(err => {
-                        console.error('Failed to copy text: ', err);
-                    });
-                });
-            }
-        });
-    </script>
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
