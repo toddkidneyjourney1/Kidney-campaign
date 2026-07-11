@@ -168,7 +168,9 @@ function setupShareButtons() {
 }
 
 async function handleShare() {
-    const url   = 'https://toddkidneyjourney1.github.io/Kidney-campaign/';
+    // Use the current page URL so this works correctly in any environment
+    // (local dev, staging, or production GitHub Pages).
+    const url   = window.location.origin + window.location.pathname;
     const title = 'Help Todd Find a Kidney | A New Chapter';
     const text  = 'Todd Lyman is seeking a living kidney donor. One person can change everything. Please help spread the word!';
 
@@ -242,7 +244,8 @@ function updateProgress(raised = 225, goal = 5000) {
 }
 
 // ===== 8. KIDNEY FACTS =====
-
+// Facts are defined inline here since this is a no-build static site.
+// To update facts, simply edit this array.
 const kidneyFacts = [
     "You keep your old kidneys: In most cases, surgeons leave your original kidneys right where they are and place the new third kidney in the lower abdomen.",
     "The 'Paired Exchange' chain reaction: Mismatched donor and recipient pairs can join a pool to swap kidneys, creating a domino effect that can save dozens of lives.",
