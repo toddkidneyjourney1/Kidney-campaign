@@ -10,25 +10,334 @@
     <meta property="og:image" content="/images/banner.jpg">
     <meta property="og:url" content="https://toddkidneyjourney1.github.io/Kidney-campaign/">
     <title>WANTED: A KIDNEY | A New Chapter</title>
+    
+    <!-- Google Fonts for Professional Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫀</text></svg>">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B8HDE9NGYF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-B8HDE9NGYF');
-    </script>
+    
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-surface: #1E293B;
+            --bg-card: #1E293B;
+            --border-color: #334155;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent-teal: #0EA5E9;
+            --accent-green: #10B981;
+            --accent-blue: #3B82F6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        header[role="banner"] {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            border: 4px solid var(--accent-teal);
+            object-fit: cover;
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tagline strong {
+            color: var(--text-main);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-teal);
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            color: #FFFFFF;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            text-align: center;
+            padding: 0.85rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .btn-green {
+            background-color: var(--accent-green);
+            color: #064E3B;
+        }
+
+        .btn-blue {
+            background-color: var(--accent-blue);
+            color: #FFFFFF;
+        }
+
+        .progress-container {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal));
+            border-radius: 5px;
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+
+        .banner-wrapper {
+            margin: 3rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .story-section h2 {
+            color: #FFFFFF;
+            margin-top: 0;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .story-section li {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .story-section li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        details {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        details p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        .share-box {
+            background: linear-gradient(135deg, #1E293B 100%, #0F172A 0%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .share-box h3 {
+            color: #FFFFFF;
+            margin-top: 0;
+        }
+
+        .share-box p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .toast {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+
+        .faq-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            color: #FFFFFF;
+            margin-top: 0;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        footer[role="contentinfo"] {
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    
 
-    <header role="banner">
+    <header role="banner" id="top">
         <div class="header-content">
             <img src="images/profile.jpg" alt="Todd Lyman - Seeking kidney donor" class="profile-img" width="150" height="150" loading="lazy">
             <h1>WANTED! A KIDNEY: A New Chapter</h1>
             <p class="tagline">
-                <em>My journey through the arts—including my time with <a href="https://www.laboratorytheaterflorida.com/" target="_blank" rel="noopener noreferrer" style="color: #00adb5; text-decoration: underline;">The Laboratory Theater of Florida</a>—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: <strong>I need a life-saving kidney transplant to continue living the life I love</strong>. Whether you can donate, contribute financially, or simply share this message, you have the power to save my life.</em>
+                <em>My journey through the arts—including my time with <a href="https://www.laboratorytheaterflorida.com/" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; text-decoration: underline;">The Laboratory Theater of Florida</a>—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: <strong>I need a life-saving kidney transplant to continue living the life I love</strong>. Whether you can donate, contribute financially, or simply share this message, you have the power to save my life.</em>
             </p>
         </div>
     </header>
@@ -61,9 +370,10 @@
             </div>
         </section>
 
-<div class="banner-wrapper">
-    <img src="images/banner.jpg" alt="Kidney campaign banner" class="banner">
-</div>
+        <div class="banner-wrapper">
+            <img src="images/banner.jpg" alt="Kidney campaign banner" class="banner">
+        </div>
+
         <section class="story-section">
             <h2>The Challenge</h2>
             <ul>
@@ -92,23 +402,23 @@
                 </li>
             </ul>
 
-          <div class="share-box">
-    <h3>Can't donate or give financially? You can still help save a life.</h3>
-    <p>Please share this page on your social media. One share could connect me with my lifesaving donor.</p>
-    
-    <div class="share-buttons">
-        <button id="share-btn" class="btn btn-blue">📋 Copy Link</button>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toddkidneyjourney1.github.io/Kidney-campaign/" target="_blank" class="btn btn-blue" style="background-color: #4267B2;">Share on Facebook</a>
-        <a href="https://twitter.com/intent/tweet?url=https://toddkidneyjourney1.github.io/Kidney-campaign/&text=Please help me find a kidney donor!" target="_blank" class="btn btn-blue" style="background-color: #1DA1F2;">Share on X/Twitter</a>
-    </div>
-    <div id="toast-notification" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-</div>
+            <div class="share-box">
+                <h3>Can't donate or give financially? You can still help save a life.</h3>
+                <p>Please share this page on your social media. One share could connect me with my lifesaving donor.</p>
+                <div class="share-buttons">
+                    <button id="share-btn" class="btn btn-blue">📋 Copy Link</button>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toddkidneyjourney1.github.io/Kidney-campaign/" target="_blank" class="btn btn-blue" style="background-color: #4267B2;">Share on Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://toddkidneyjourney1.github.io/Kidney-campaign/&text=Please help me find a kidney donor!" target="_blank" class="btn btn-blue" style="background-color: #1DA1F2;">Share on X/Twitter</a>
+                </div>
+                <div id="toast-notification" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+            </div>
+        </section>
 
-        <section class="fact-section" style="text-align: center; margin: 2rem auto; max-width: 800px; padding: 0 20px;">
+        <section class="fact-section" style="text-align: center; margin: 3rem auto; max-width: 800px; padding: 0 20px;">
             <button id="fact-btn" class="btn btn-blue" aria-label="Show a random kidney fact">
                 💡 Show a Fun Kidney Fact
             </button>
-            <p id="fact-display" style="margin-top: 15px; font-style: italic; min-height: 1.5em; color: #fff; font-size: 1.1em;"></p>
+            <p id="fact-display" style="margin-top: 15px; font-style: italic; min-height: 1.5em; color: var(--text-main); font-size: 1.1em;"></p>
         </section>
 
         <section class="faq-section">
@@ -118,7 +428,6 @@
                     <summary><strong>What blood type are you?</strong></summary>
                     <p>Blood type compatibility is no longer a barrier thanks to modern paired-exchange programs at HCA Florida Largo.</p>
                 </details>
-                <hr style="margin: 5px 0 0 0; border: 0; border-top: 1px solid #444;">
             </div>
             <div class="faq-item">
                 <details>
@@ -141,38 +450,38 @@
             <div class="faq-item">
                 <details>
                     <summary><strong>How do I start the process if I am interested in testing?</strong></summary>
-                    <p>You can contact the HCA Florida Largo transplant coordinator directly by <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer" style="color: #00adb5; text-decoration: underline;">visiting the HCA screening portal</a>. The process is confidential and you can stop at any time without any pressure or obligation.</p>
+                    <p>You can contact the HCA Florida Largo transplant coordinator directly by <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; text-decoration: underline;">visiting the HCA screening portal</a>. The process is confidential and you can stop at any time without any pressure or obligation.</p>
                 </details>
             </div>
         </section>
 
-        <section class="timeline-section" style="background-color: #393e46; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+        <section class="timeline-section" style="background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
             <div class="timeline-card">
-                <h2 style="color: #00adb5; margin-bottom: 25px; font-size: 1.5rem;">My Journey</h2>
-                <div class="timeline-container" style="position: relative; padding-left: 35px; border-left: 3px solid #222831; margin-left: 10px;">
+                <h2 style="color: #FFFFFF; margin-bottom: 25px; font-size: 1.75rem;">My Journey</h2>
+                <div class="timeline-container" style="position: relative; padding-left: 35px; border-left: 3px solid var(--border-color); margin-left: 10px;">
                     
                     <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">🩸</span>
-                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Dialysis Treatment</h3>
-                        <p style="margin: 0; color: #ccc;">Managing kidney function through regular treatments while waiting for my match.</p>
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--bg-card); font-size: 1.2rem; padding: 2px;">🩸</span>
+                        <h3 style="font-size: 1.1rem; color: #FFFFFF; margin-bottom: 5px;">Dialysis Treatment</h3>
+                        <p style="margin: 0; color: var(--text-muted);">Managing kidney function through regular treatments while waiting for my match.</p>
                     </div>
 
                     <div class="timeline-item current" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #00adb5; border-radius: 50%; font-size: 1.2rem; padding: 2px; box-shadow: 0 0 8px #00adb5;">🔍</span>
-                        <h3 style="font-size: 1.1rem; color: #00adb5; margin-bottom: 5px; font-weight: bold;">Seeking Living Donor (NOW)</h3>
-                        <p style="margin: 0; color: #eee;">Active search phase. If you or someone you know might be a match, please reach out.</p>
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--accent-teal); border-radius: 50%; font-size: 1.2rem; padding: 2px; box-shadow: 0 0 12px var(--accent-teal);">🔍</span>
+                        <h3 style="font-size: 1.1rem; color: var(--accent-teal); margin-bottom: 5px; font-weight: bold;">Seeking Living Donor (NOW)</h3>
+                        <p style="margin: 0; color: #FFFFFF;">Active search phase. If you or someone you know might be a match, please reach out.</p>
                     </div>
 
                     <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">⚕️</span>
-                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Pre-Transplant Prep</h3>
-                        <p style="margin: 0; color: #ccc;">Final clearances and coordination with HCA Florida Largo.</p>
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--bg-card); font-size: 1.2rem; padding: 2px;">⚕️</span>
+                        <h3 style="font-size: 1.1rem; color: #FFFFFF; margin-bottom: 5px;">Pre-Transplant Prep</h3>
+                        <p style="margin: 0; color: var(--text-muted);">Final clearances and coordination with HCA Florida Largo.</p>
                     </div>
 
                     <div class="timeline-item" style="position: relative;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: #393e46; font-size: 1.2rem; padding: 2px;">✨</span>
-                        <h3 style="font-size: 1.1rem; color: #eee; margin-bottom: 5px;">Transplant & Recovery</h3>
-                        <p style="margin: 0; color: #ccc;">The beginning of my new chapter with restored health.</p>
+                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--bg-card); font-size: 1.2rem; padding: 2px;">✨</span>
+                        <h3 style="font-size: 1.1rem; color: #FFFFFF; margin-bottom: 5px;">Transplant & Recovery</h3>
+                        <p style="margin: 0; color: var(--text-muted);">The beginning of my new chapter with restored health.</p>
                     </div>
                     
                 </div>
@@ -181,9 +490,9 @@
 
         <div style="text-align: center; margin: 40px 0;">
             <a href="#top" class="btn btn-blue" style="text-decoration: none; padding: 10px 20px; display: inline-block; width: auto;">🏠 Go Back to Top</a>
-     </div
+        </div>
        
-        <footer role="contentinfo" style="margin-top: 40px; padding: 20px; text-align: center; border-top: 1px solid #ccc;">
+        <footer role="contentinfo">
             <p>&copy; 2026 Todd Lyman Kidney Journey. All rights reserved.</p>
             <p><small>Medical information provided for educational purposes. Please consult with healthcare professionals regarding kidney donation.</small></p>
         </footer>
@@ -191,7 +500,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
             // ===================================================
             // 1. GOFUNDME COUNTER CONFIGURATION
             // ===================================================
