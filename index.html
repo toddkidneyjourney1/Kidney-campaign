@@ -1,49 +1,164 @@
-<!-- Hero Section with Above-the-Fold CTAs -->
-<header class="hero-section">
-    <div class="profile-container">
-        <img src="path-to-todd-photo.jpg" alt="Todd Lyman - Seeking kidney donor" class="profile-img">
-    </div>
-    <h1>WANTED! A KIDNEY: A New Chapter</h1>
-    <p class="hero-bio">
-        My journey through the arts—including my time with <a href="https://laboratorytheaterflorida.com/" target="_blank">The Laboratory Theater of Florida</a>—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: <strong>I need a life-saving kidney transplant to continue living the life I love.</strong>
-    </p>
-    
-    <!-- Immediate Action Buttons (Above the Fold) -->
-    <div class="hero-cta-group">
-        <a href="#screening-portal" class="btn btn-primary">📋 How to Test if You're a Match</a>
-        <a href="https://gofundme.com" target="_blank" class="btn btn-secondary">💳 Donate on GoFundMe ($175 / $5,000)</a>
-    </div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todd Lyman - Seeking Kidney Donor</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 3rem 1rem 2rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-section h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .hero-bio {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+        .hero-bio a {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        .btn {
+            padding: 0.85rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background-color: #ef4444;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #2563eb;
+            color: white;
+        }
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 320px;
+            margin: 0 auto;
+            background: #1e293b;
+            border: 2px dashed #475569;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+        }
+        .timeline-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+        .step-card {
+            background: #1e293b;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+        .step-num {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #ef4444;
+            color: white;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .step-card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .step-card p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
 
-<!-- Personal Video Introduction Section -->
-<section class="video-section">
-    <h2>Hear My Story</h2>
-    <div class="video-wrapper">
-        <!-- Embed your video here (e.g., YouTube or HTML5 video) -->
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <h1>WANTED! A KIDNEY: A New Chapter</h1>
+        <p class="hero-bio">
+            My journey through the arts—including my time with <a href="https://helptodd.live/https://laboratorytheaterflorida.com/" target="_blank">The Laboratory Theater of Florida</a>—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: <strong>I need a life-saving kidney transplant to continue living the life I love.</strong>
+        </p>
+        
+        <!-- Action Buttons Above the Fold -->
+        <div class="hero-cta-group">
+            <a href="https://helptodd.live/https://helptodd.live/#screening-portal" class="btn btn-primary">📋 How to Test if You're a Match</a>
+            <a href="https://helptodd.live/https://gofundme.com/" target="_blank" class="btn btn-secondary">💳 Donate on GoFundMe ($175 / $5,000)</a>
+        </div>
+    </header>
+
+    <!-- Video Section -->
+    <section class="content-section">
+        <h2>Hear My Story</h2>
         <div class="video-placeholder">
-            <p>▶️ [Insert Personal Video Message From Todd Here]</p>
+            <span>▶️ [Insert Personal Video Message From Todd Here]</span>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Step-by-Step Living Donation Timeline -->
-<section class="timeline-section">
-    <h2>The Living Donation Process</h2>
-    <div class="timeline-steps">
-        <div class="step-card">
-            <span class="step-num">1</span>
-            <h3>Quick Online Screening</h3>
-            <p>Fill out the confidential questionnaire through the HCA Florida Largo portal to check basic eligibility.</p>
+    <!-- Timeline Section -->
+    <section class="content-section">
+        <h2>The Living Donation Process</h2>
+        <div class="timeline-steps">
+            <div class="step-card">
+                <span class="step-num">1</span>
+                <h3>Quick Online Screening</h3>
+                <p>Fill out the confidential questionnaire through the HCA Florida Largo portal to check basic eligibility.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">2</span>
+                <h3>Medical Evaluation</h3>
+                <p>Comprehensive blood work, imaging, and health checks coordinated securely by the transplant team.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">3</span>
+                <h3>Surgery & Recovery</h3>
+                <p>The procedure is performed by top specialists, with most donors returning to normal activities in 4–6 weeks.</p>
+            </div>
         </div>
-        <div class="step-card">
-            <span class="step-num">2</span>
-            <h3>Medical Evaluation</h3>
-            <p>Comprehensive blood work, imaging, and health checks coordinated securely by the transplant team.</p>
-        </div>
-        <div class="step-card">
-            <span class="step-num">3</span>
-            <h3>Surgery & Recovery</h3>
-            <p>The procedure is performed by top specialists, with most donors returning to normal activities in 4–6 weeks.</p>
-        </div>
-    </div>
-</section>
+    </section>
+
+</body>
+</html>
