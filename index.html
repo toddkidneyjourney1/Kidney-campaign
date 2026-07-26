@@ -11,50 +11,47 @@
     <meta property="og:url" content="https://toddkidneyjourney1.github.io/Kidney-campaign/">
     <title>WANTED: A KIDNEY | A New Chapter</title>
     
-    <!-- Google Fonts for Professional Typography -->
+    <!-- Updated Google Fonts for a Clean, Professional Look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫀</text></svg>">
     
+    <!-- Redesigned CSS with a New Color Palette -->
     <style>
         :root {
-            --bg-main: #0B0F19;
-            --bg-surface: #1E293B;
-            --bg-card: #1E293B;
-            --border-color: #334155;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --accent-teal: #0EA5E9;
-            --accent-green: #10B981;
-            --accent-blue: #3B82F6;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --primary-color: #2C3E50; /* Dark Slate */
+            --accent-teal: #1ABC9C;
+            --accent-green: #27AE60;
+            --accent-blue: #3498DB;
+            --text-main: #333333;
+            --text-muted: #555555;
+            --bg-light: #ECF0F1;
+            --bg-white: #FFFFFF;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-main);
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-light);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            letter-spacing: -0.02em;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.5px;
+            color: var(--primary-color);
         }
 
         header[role="banner"] {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            border-bottom: 1px solid var(--border-color);
-            padding: 4rem 1.5rem 3rem;
+            background-color: var(--bg-white);
+            padding: 3rem 1.5rem;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .header-content {
@@ -64,30 +61,31 @@
 
         .profile-img {
             border-radius: 50%;
-            border: 4px solid var(--accent-teal);
+            border: 6px solid var(--accent-teal);
             object-fit: cover;
-            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 1.5rem;
         }
 
         header h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
-            color: #FFFFFF;
+            margin: 0 0 0.5rem;
         }
 
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.03);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
+            margin-top: 1rem;
         }
 
-        .tagline strong {
-            color: var(--text-main);
+        .tagline a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .tagline a:hover {
+            text-decoration: underline;
         }
 
         main {
@@ -104,56 +102,51 @@
         }
 
         .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            background-color: var(--bg-white);
+            border-radius: 15px;
             padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent-teal); /* Subtle accent bar */
+            transition: transform 0.3s ease;
         }
-
         .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-teal);
+            transform: translateY(-5px);
         }
 
         .card h2 {
-            font-size: 1.35rem;
-            color: #FFFFFF;
             margin-top: 0;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .btn {
             display: inline-block;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             text-align: center;
-            padding: 0.85rem 1.5rem;
-            border-radius: 10px;
+            padding: 1rem 2rem;
+            border-radius: 30px; /* Rounded buttons */
             text-decoration: none;
-            transition: opacity 0.2s ease, transform 0.1s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             cursor: pointer;
             border: none;
         }
 
         .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
+            transform: translateY(-2px);
         }
 
         .btn-green {
             background-color: var(--accent-green);
-            color: #064E3B;
+            color: #FFFFFF;
         }
 
         .btn-blue {
@@ -162,12 +155,10 @@
         }
 
         .progress-container {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border-color);
+            background-color: #F9F9F9;
             border-radius: 10px;
-            padding: 1rem;
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .progress-header {
@@ -175,32 +166,31 @@
             justify-content: space-between;
             font-size: 0.9rem;
             font-weight: 600;
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
-            color: var(--text-main);
         }
 
         .progress-bar {
             width: 100%;
-            height: 10px;
-            background-color: var(--border-color);
-            border-radius: 5px;
+            height: 12px;
+            background-color: #E0E0E0;
+            border-radius: 6px;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal));
-            border-radius: 5px;
+            background-color: var(--accent-teal);
+            border-radius: 6px;
             width: 0%;
             transition: width 1s ease-in-out;
         }
 
         .banner-wrapper {
             margin: 3rem 0;
-            border-radius: 16px;
+            border-radius: 15px;
             overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .banner {
@@ -210,90 +200,82 @@
         }
 
         .story-section {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
+            background-color: var(--bg-white);
+            border-radius: 15px;
+            padding: 3rem;
             margin-bottom: 3rem;
         }
 
         .story-section h2 {
-            color: #FFFFFF;
-            margin-top: 0;
-            font-size: 1.75rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
         }
 
         .story-section ul {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         .story-section li {
             margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
+            padding-left: 3rem;
+            position: relative;
         }
-
-        .story-section li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .story-section li::before {
+            content: '✔'; /* Custom checkmark bullet */
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-size: 1.5rem;
         }
 
         details {
-            background: rgba(15, 23, 42, 0.4);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            background-color: #F9F9F9;
+            border-radius: 10px;
             padding: 1rem;
             margin-top: 1rem;
+            border-left: 4px solid var(--accent-teal);
         }
 
         summary {
             cursor: pointer;
             font-weight: 600;
-            color: var(--text-main);
+            color: var(--primary-color);
         }
 
         details p {
-            color: var(--text-muted);
             font-size: 0.95rem;
-            margin-top: 0.75rem;
-            margin-bottom: 0;
+            margin-top: 0.5rem;
         }
 
         .share-box {
-            background: linear-gradient(135deg, #1E293B 100%, #0F172A 0%);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border-radius: 15px;
+            padding: 3rem;
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
-
         .share-box h3 {
             color: #FFFFFF;
-            margin-top: 0;
+            font-size: 1.8rem;
         }
-
         .share-box p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            color: #DDDDDD;
+            margin-bottom: 2rem;
         }
 
         .share-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         .toast {
-            margin-top: 1rem;
-            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            font-size: 1rem;
             font-weight: 600;
-            color: var(--accent-green);
+            color: var(--accent-teal);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -303,30 +285,34 @@
         }
 
         .faq-section {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
             margin-bottom: 3rem;
         }
-
         .faq-section h2 {
-            color: #FFFFFF;
-            margin-top: 0;
-            font-size: 1.75rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
+            text-align: center;
         }
-
         .faq-item {
+            background-color: var(--bg-white);
             margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 1rem;
         }
 
         footer[role="contentinfo"] {
-            border-top: 1px solid var(--border-color);
-            padding: 2.5rem 1rem;
+            background-color: var(--primary-color);
+            color: #DDDDDD;
+            padding: 3rem 1.5rem;
             text-align: center;
-            color: var(--text-muted);
             font-size: 0.9rem;
+        }
+        footer a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -337,7 +323,7 @@
             <img src="images/profile.jpg" alt="Todd Lyman - Seeking kidney donor" class="profile-img" width="150" height="150" loading="lazy">
             <h1>WANTED! A KIDNEY: A New Chapter</h1>
             <p class="tagline">
-                <em>My journey through the arts—including my time with <a href="https://www.laboratorytheaterflorida.com/" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; text-decoration: underline;">The Laboratory Theater of Florida</a>—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: <strong>I need a life-saving kidney transplant to continue living the life I love</strong>. Whether you can donate, contribute financially, or simply share this message, you have the power to save my life.</em>
+                <em>My journey through the arts—including my time with <a href="https://www.laboratorytheaterflorida.com/" target="_blank" rel="noopener noreferrer">The Laboratory Theater of Florida</a>—has always been about storytelling and finding light in the unexpected. Today, I am facing my biggest challenge yet: <strong>I need a life-saving kidney transplant to continue living the life I love</strong>. Whether you can donate, contribute financially, or simply share this message, you have the power to save my life.</em>
             </p>
         </div>
     </header>
@@ -406,173 +392,4 @@
                 <h3>Can't donate or give financially? You can still help save a life.</h3>
                 <p>Please share this page on your social media. One share could connect me with my lifesaving donor.</p>
                 <div class="share-buttons">
-                    <button id="share-btn" class="btn btn-blue">📋 Copy Link</button>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toddkidneyjourney1.github.io/Kidney-campaign/" target="_blank" class="btn btn-blue" style="background-color: #4267B2;">Share on Facebook</a>
-                    <a href="https://twitter.com/intent/tweet?url=https://toddkidneyjourney1.github.io/Kidney-campaign/&text=Please help me find a kidney donor!" target="_blank" class="btn btn-blue" style="background-color: #1DA1F2;">Share on X/Twitter</a>
-                </div>
-                <div id="toast-notification" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-            </div>
-        </section>
-
-        <section class="fact-section" style="text-align: center; margin: 3rem auto; max-width: 800px; padding: 0 20px;">
-            <button id="fact-btn" class="btn btn-blue" aria-label="Show a random kidney fact">
-                💡 Show a Fun Kidney Fact
-            </button>
-            <p id="fact-display" style="margin-top: 15px; font-style: italic; min-height: 1.5em; color: var(--text-main); font-size: 1.1em;"></p>
-        </section>
-
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>What blood type are you?</strong></summary>
-                    <p>Blood type compatibility is no longer a barrier thanks to modern paired-exchange programs at HCA Florida Largo.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>What is the difference between living and deceased donation?</strong></summary>
-                    <p>A living donor can often provide a kidney that lasts longer and functions immediately. Deceased donation is an option, but the waitlist can be many years long, making living donation the most effective way to help.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>Will I have to pay for the medical expenses of testing or donating?</strong></summary>
-                    <p>No. All medical expenses for a living donor's evaluation, surgery, and follow-up care are covered by the recipient’s insurance or the transplant center.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>What are the long-term health risks for a donor?</strong></summary>
-                    <p>Living donors are screened extensively to ensure they are healthy enough to donate. Most donors live normal, healthy lives with one kidney, as the remaining kidney increases its capacity to filter blood effectively.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary><strong>How do I start the process if I am interested in testing?</strong></summary>
-                    <p>You can contact the HCA Florida Largo transplant coordinator directly by <a href="http://www.largomedical.com/signmeup" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; text-decoration: underline;">visiting the HCA screening portal</a>. The process is confidential and you can stop at any time without any pressure or obligation.</p>
-                </details>
-            </div>
-        </section>
-
-        <section class="timeline-section" style="background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-            <div class="timeline-card">
-                <h2 style="color: #FFFFFF; margin-bottom: 25px; font-size: 1.75rem;">My Journey</h2>
-                <div class="timeline-container" style="position: relative; padding-left: 35px; border-left: 3px solid var(--border-color); margin-left: 10px;">
-                    
-                    <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--bg-card); font-size: 1.2rem; padding: 2px;">🩸</span>
-                        <h3 style="font-size: 1.1rem; color: #FFFFFF; margin-bottom: 5px;">Dialysis Treatment</h3>
-                        <p style="margin: 0; color: var(--text-muted);">Managing kidney function through regular treatments while waiting for my match.</p>
-                    </div>
-
-                    <div class="timeline-item current" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--accent-teal); border-radius: 50%; font-size: 1.2rem; padding: 2px; box-shadow: 0 0 12px var(--accent-teal);">🔍</span>
-                        <h3 style="font-size: 1.1rem; color: var(--accent-teal); margin-bottom: 5px; font-weight: bold;">Seeking Living Donor (NOW)</h3>
-                        <p style="margin: 0; color: #FFFFFF;">Active search phase. If you or someone you know might be a match, please reach out.</p>
-                    </div>
-
-                    <div class="timeline-item" style="position: relative; margin-bottom: 35px;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--bg-card); font-size: 1.2rem; padding: 2px;">⚕️</span>
-                        <h3 style="font-size: 1.1rem; color: #FFFFFF; margin-bottom: 5px;">Pre-Transplant Prep</h3>
-                        <p style="margin: 0; color: var(--text-muted);">Final clearances and coordination with HCA Florida Largo.</p>
-                    </div>
-
-                    <div class="timeline-item" style="position: relative;">
-                        <span class="timeline-icon" style="position: absolute; left: -47px; top: -2px; background: var(--bg-card); font-size: 1.2rem; padding: 2px;">✨</span>
-                        <h3 style="font-size: 1.1rem; color: #FFFFFF; margin-bottom: 5px;">Transplant & Recovery</h3>
-                        <p style="margin: 0; color: var(--text-muted);">The beginning of my new chapter with restored health.</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="#top" class="btn btn-blue" style="text-decoration: none; padding: 10px 20px; display: inline-block; width: auto;">🏠 Go Back to Top</a>
-        </div>
-       
-        <footer role="contentinfo">
-            <p>&copy; 2026 Todd Lyman Kidney Journey. All rights reserved.</p>
-            <p><small>Medical information provided for educational purposes. Please consult with healthcare professionals regarding kidney donation.</small></p>
-        </footer>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // ===================================================
-            // 1. GOFUNDME COUNTER CONFIGURATION
-            // ===================================================
-            const currentRaised = 175; 
-            const fundingGoal = 5000;
-
-            const raisedAmountEl = document.getElementById('raised-amount');
-            const progressFillEl = document.getElementById('progress-fill');
-            const progressBarContainer = document.querySelector('.progress-bar');
-
-            if (raisedAmountEl && progressFillEl) {
-                raisedAmountEl.textContent = new Intl.NumberFormat('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    maximumFractionDigits: 0
-                }).format(currentRaised);
-
-                const percentage = Math.min((currentRaised / fundingGoal) * 100, 100);
-                progressFillEl.style.width = `${percentage}%`;
-
-                if (progressBarContainer) {
-                    progressBarContainer.setAttribute('aria-valuenow', Math.round(percentage));
-                    progressBarContainer.setAttribute('aria-label', `Fundraising progress: ${currentRaised} of ${fundingGoal} dollars raised`);
-                }
-            }
-
-            // ===================================================
-            // 2. RANDOM KIDNEY FACTS CONTROLLER
-            // ===================================================
-            const kidneyFacts = [
-                "Your kidneys filter about 200 quarts of fluid every day, clearing out waste and keeping your body chemistry in balance.",
-                "Even though they make up only about 0.5% of your body weight, your kidneys receive about 20-25% of the heart's total blood output.",
-                "A single kidney is fully capable of doing the work of two! That’s why living donors can live perfectly healthy, normal lives.",
-                "Kidneys are shaped like beans, and each one is roughly the size of a large fist or a computer mouse.",
-                "Each kidney contains about 1 million tiny filtering units called nephrons. If you stretched them all out end-to-end, they would span over 40 miles!"
-            ];
-
-            const factBtn = document.getElementById('fact-btn');
-            const factDisplay = document.getElementById('fact-display');
-            
-            if (factBtn && factDisplay) {
-                factBtn.addEventListener('click', () => {
-                    const randomIndex = Math.floor(Math.random() * kidneyFacts.length);
-                    factDisplay.textContent = kidneyFacts[randomIndex];
-                });
-            }
-
-            // ===================================================
-            // 3. SHARE CAMPAIGN BUTTON CONTROLLER
-            // ===================================================
-            const shareBtn = document.getElementById('share-btn');
-            const toast = document.getElementById('toast-notification');
-
-            if (shareBtn) {
-                shareBtn.addEventListener('click', () => {
-                    const siteUrl = window.location.href;
-                    
-                    navigator.clipboard.writeText(siteUrl).then(() => {
-                        if (toast) {
-                            toast.textContent = "📋 Campaign link copied to clipboard!";
-                            toast.classList.add('show');
-                            setTimeout(() => {
-                                toast.classList.remove('show');
-                            }, 3000);
-                        } else {
-                            alert("Link copied to clipboard!");
-                        }
-                    }).catch(err => {
-                        console.error('Failed to copy text: ', err);
-                    });
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+                    <button id="share-btn" class="btn btn-blue" style="background-color: var
